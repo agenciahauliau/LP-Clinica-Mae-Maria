@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/Imagens/simbolo.svg" />
+
+    <title>Clínica Mãe Maria</title>
+    <meta name="title" content="Clínica Mãe Maria">
+    <meta name="description"
+        content="Digital Marketing tailored to grow your business.It doesn’t matter where you are (digitally speaking), we offer assistance at every stage.">
+    <meta name="keywords"
+        content="Marketing Digital, Landing Page, Web Page, Social Media, Website, eCommerce Marketing, Web Design, SEO Optimisation, Search Engine Optimisation, SEO, Pay Per Click, Social Media Marketing, Online Reputation Management, Paid Campaigns, UX/UI, Conversion Rate Optimisation, Market place">
+    <meta name="copyright" content="HAUL IAU Business & Marketing">
+    <meta name="robots" content="index,follow" />
+    <meta name="Classification" content="Business">
+    <meta name="author" content="Agency Haul Iau, contato@hi4u.me">
+    <meta name="url" content="https://www.hi4u.me/digitalservices/">
+
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hi4u.me/digitalservices/">
+    <meta property="og:title" content="Clínica Mãe Maria">
+    <meta property="og:description"
+        content="Digital Marketing tailored to grow your business.It doesn’t matter where you are (digitally speaking), we offer assistance at every stage.">
+    <meta property="og:image" content="https://assets.hi4u.me/Imagens/1x/nome-fp.png" alt="Haul Iau">
+    <meta property="og:og:image:alt" content="Haul Iau">
+
+    <meta property="fb:admins" content="826066494413607" />
+    <meta name='application-name' content='Haul Iau'>
+    <meta name='og:email' content='contato@hi4u.me'>
+    <meta name='og:phone_number' content='+55-62-9926-4198'>
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hi4u.me/digitalservices/">
+    <meta property="twitter:title" content="Haul Iau — Doing Digital Marketing the Right Way">
+    <meta property="twitter:description"
+        content="Digital Marketing tailored to grow your business.It doesn’t matter where you are (digitally speaking), we offer assistance at every stage.">
+    <meta property="twitter:image" content="https://assets.hi4u.me/Imagens/1x/nome-fp.png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;1,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: Roboto;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        h4 {
+            font-size: 1m;
+        }
+
+        h5 {
+            font-size: 0.75em;
+        }
+
+        h6 {
+            font-size: 0.5em;
+        }
+
+        html {
+            width: 100vw;
+            font-size: 13px;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: auto;
+        }
+
+        div.cookies {
+            display: none;
+        }
+
+        div.cookies {
+            flex-direction: column;
+            position: fixed;
+            bottom: -50px;
+            left: 0;
+            z-index: 100;
+            background-color: #fff9;
+            padding: 13px 34px;
+            opacity: 0;
+            transition: 0.5s ease 0.5s;
+        }
+
+        div.cookies p {
+            color: #000;
+            line-height: 1.5em;
+            transition: 0.5s ease 0.3s;
+            opacity: 0;
+        }
+
+        div.cookies div {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            margin: 13px auto;
+            position: relative;
+        }
+
+        div.cookies div button {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            padding: 8px 13px;
+            background: #00ff8055;
+            color: #fff;
+            font-weight: 700;
+            transition: 0.5s ease;
+            opacity: 0;
+        }
+
+        div.cookies div button::after {
+            content: " ";
+            width: 100%;
+            height: 100%;
+            border: 1px solid #fff5;
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            transition: 0.2s ease;
+        }
+
+        div.cookies.display {
+            display: flex;
+        }
+
+        div.cookies.active {
+            bottom: 0;
+            opacity: 1;
+            transition: 0.5s ease;
+        }
+
+        div.cookies.active p {
+            transition: 0.5s ease 0.5s;
+            opacity: 1;
+        }
+
+        div.cookies.active div button {
+            transition: 0.5s ease 0.8s;
+            opacity: 1;
+        }
+
+        div.cookies.active div button:hover {
+            background: #00ff80;
+            color: #000;
+            transition: 0.3s ease 0s;
+        }
+
+        div.cookies.active div button:hover::after {
+            border: 1px solid #fff;
+            transform: scale(1.05);
+            transition: 0.3s ease;
+        }
+
+        @media screen and (min-width: 820px) {
+            html {
+                font-size: 20px;
+            }
+
+            div.cookies {
+                flex-direction: row;
+                font-size: 0.7em;
+            }
+
+            div.cookies p {
+                width: 89%;
+                padding: 0 34px;
+            }
+
+        }
+    </style>
+    <link rel="stylesheet" href="Assets/Css/Style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+
+            </div>
+            <div class="menus">
+                <input type="checkbox" id="menu">
+                <label for="menu">
+                    menu
+                </label>
+                <ul class="menu">
+                    <li>Sobre nós</li>
+                    <li>Qualidade</li>
+                    <li>Exames</li>
+                    <li>Agendamento de Exames</li>
+                    <li>Resultado Online</li>
+                </ul>
+                <ul class="social">
+                    <li>(62) 0000-0000</li>
+                    <li>contato@gmail.com</li>
+                    <li>facebook</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="um">
+        <div class="container">
+            <div class="texto">
+                <h1>Uma boa imagem necessita de um bom radiologista que a interprete</h1>
+                <h3>É por isso que desde 2013 trabalhamos em Inhumas</h3>
+            </div>
+        </div>
+    </section>
+    <section class="dois">
+        <div class="empresa">
+            <div class="sobre">
+                <h3>A Clínica de Imagem Mãe Maria, fundada em junho de 2013, é tradição e referência da região de
+                    Inhumas
+                    em exames de diagnóstico por imagem. Está localizada na Rua Leopoldo de Bulhões, número 1315, centro
+                    da cidade. Aqui são oferecidos os mais modernos exames como ultrassonografia, tomografia
+                    Computadorizada, ressonância magnética, ecocardiografia, exames cardiológicos, dentre outros.</h3>
+            </div>
+            <div class="missao">
+                <p>
+                    A clínica tem como missão oferecer excelência na realização dos exames de diagnóstico por imagem
+                    através de atendimento humanizado, prezando sempre pela segurança, agilidade nos resultados,
+                    confiança e precisão diagnóstica.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="tres">
+        <div class="estrutura">
+            <h3>Conta com uma moderna infraestrutura e equipe de médicos especialistas, que aliam tecnologia, conforto,
+                segurança, qualidade e agilidade na realização de exames, sempre com foco em oferecer o melhor aos
+                clientes/ pacientes.</h3>
+            <div class="equipe">
+                <div class="pessoas"></div>
+            </div>
+        </div>
+    </section>
+    <section class="quatro">
+        <div class="exames">
+            <div class="exame">
+
+            </div>
+        </div>
+    </section>
+    <section class="cinco">
+        <div class="agendamento">
+
+        </div>
+    </section>
+    <section class="seis">
+        <div class="resultado"></div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+<script src="assets/Js/Java.js" async></script>
+
+</html>
