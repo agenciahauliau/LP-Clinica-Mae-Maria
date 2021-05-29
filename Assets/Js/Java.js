@@ -1,197 +1,205 @@
 "use restrict";
 
-window.onload = function () {
-  scrollSection();
-  if (!localStorage.getItem("cookieAccept")) {
-    cookieContainer.classList.add("display");
-    setTimeout(() => {
-      cookieContainer.classList.add("active");
-    }, 500);
-  }
-};
+const verMaisExames = document.querySelector(".verMais .ver")
 
-window.onscroll = function () {
-  scrollSection();
-};
+verMaisExames.addEventListener("click", function(){
+  document.querySelector(".exames").classList.toggle("verExames")
+})
 
-function scrollSection() {
-  const sections = document.querySelectorAll("section, header, footer");
-  const astronaut = document.querySelector(".three .astronaut");
-  const quotes = document.querySelectorAll(".four .testimonial");
+console.log(verMaisExames)
 
-  for (const section of sections) {
-    if (
-      ((section.offsetTop - window.pageYOffset) * 100) / window.innerHeight >
-      70
-    ) {
-      section.classList.remove("active");
-    } else {
-      section.classList.add("active");
-    }
-  }
+// window.onload = function () {
+//   scrollSection();
+//   if (!localStorage.getItem("cookieAccept")) {
+//     cookieContainer.classList.add("display");
+//     setTimeout(() => {
+//       cookieContainer.classList.add("active");
+//     }, 500);
+//   }
+// };
 
-  if (
-    ((sections.item(3).offsetTop - window.pageYOffset) * 100) /
-      window.innerHeight >
-    35
-  ) {
-    astronaut.classList.remove("active");
-  } else {
-    astronaut.classList.add("active");
-  }
+// window.onscroll = function () {
+//   scrollSection();
+// };
 
-  for (const quote of quotes) {
-    if (
-      ((sections.item(4).offsetTop + quote.offsetTop - window.pageYOffset) *
-        100) /
-        window.innerHeight >
-      60
-    ) {
-      quote.classList.remove("active");
-    } else {
-      quote.classList.add("active");
-    }
-  }
-}
+// function scrollSection() {
+//   const sections = document.querySelectorAll("section, header, footer");
+//   const astronaut = document.querySelector(".three .astronaut");
+//   const quotes = document.querySelectorAll(".four .testimonial");
 
-const services = document.querySelectorAll(".boxServices div[class*='Box']");
+//   for (const section of sections) {
+//     if (
+//       ((section.offsetTop - window.pageYOffset) * 100) / window.innerHeight >
+//       70
+//     ) {
+//       section.classList.remove("active");
+//     } else {
+//       section.classList.add("active");
+//     }
+//   }
 
-for (const idx in services) {
-  const scrollTwo = document.querySelector(".two .scroll");
+//   if (
+//     ((sections.item(3).offsetTop - window.pageYOffset) * 100) /
+//       window.innerHeight >
+//     35
+//   ) {
+//     astronaut.classList.remove("active");
+//   } else {
+//     astronaut.classList.add("active");
+//   }
 
-  services[idx].onclick = function () {
-    scrollTwo.scrollTo({
-      top: 0,
-      left: idx * services[0].offsetWidth - 40,
-      behavior: "smooth",
-    });
-  };
-}
+//   for (const quote of quotes) {
+//     if (
+//       ((sections.item(4).offsetTop + quote.offsetTop - window.pageYOffset) *
+//         100) /
+//         window.innerHeight >
+//       60
+//     ) {
+//       quote.classList.remove("active");
+//     } else {
+//       quote.classList.add("active");
+//     }
+//   }
+// }
 
-const pickMes = document.querySelectorAll(
-  ".textInformation div[class*='Text'] .text button"
-);
-const package = document.querySelector("select[name='package']");
-const form = document.querySelector(".five .form form");
+// const services = document.querySelectorAll(".boxServices div[class*='Box']");
 
-for (const idx in pickMes) {
-  pickMes[idx].onclick = function () {
-    package.value = pickMes[idx].value;
-    window.scrollTo({
-      top: form.offsetTop,
-      behavior: "smooth",
-    });
-  };
-}
+// for (const idx in services) {
+//   const scrollTwo = document.querySelector(".two .scroll");
 
-async function enviar() {
-  const url = window.location.hostname.replace(/^[^/]*\/\/\w+.|(www.)/g, "");
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+//   services[idx].onclick = function () {
+//     scrollTwo.scrollTo({
+//       top: 0,
+//       left: idx * services[0].offsetWidth - 40,
+//       behavior: "smooth",
+//     });
+//   };
+// }
 
-  let raw = JSON.stringify({
-    de: `site@${url}`,
-    para: ["contato@hi4u.me"],
-    assunto: `Solicitação de contato pelo formulário do site ${url}`,
-    mensagem: `Novo contato do site ${url}\n\n
-                Nome: ${document.querySelector("#name").value}\n\n
-                Website: ${document.querySelector("#website").value}\n\n
-                Email: ${document.querySelector("#email").value}\n\n
-                Telefone: ${document.querySelector("#tel").value}\n\n
-                Lingua: ${document.querySelector("#language").value}\n\n
-                Package: ${document.querySelector("#package").value}\n\n
-                `,
-  });
+// const pickMes = document.querySelectorAll(
+//   ".textInformation div[class*='Text'] .text button"
+// );
+// const package = document.querySelector("select[name='package']");
+// const form = document.querySelector(".five .form form");
 
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-  };
+// for (const idx in pickMes) {
+//   pickMes[idx].onclick = function () {
+//     package.value = pickMes[idx].value;
+//     window.scrollTo({
+//       top: form.offsetTop,
+//       behavior: "smooth",
+//     });
+//   };
+// }
 
-  return await fetch(
-    "https://services.rangell.com.br/v1/enviar",
-    requestOptions
-  )
-    .then((response) => response.text())
-    .then((result) => {
-      console.log(result);
-      window.alert(
-        "Your request has been sent. We will get in touch with you soon. Thank you."
-      );
-      document.querySelector("#name").value = "";
-      document.querySelector("#email").value = "";
-      document.querySelector("#tel").value = "";
-      document.querySelector("#website").value = "";
-    })
-    .catch((error) => {
-      console.log("error", error);
-      window.alert(
-        "There is some data missing or an unexpected error has occurred. Check the information you entered or refresh the page and try again."
-      );
-    });
-}
+// async function enviar() {
+//   const url = window.location.hostname.replace(/^[^/]*\/\/\w+.|(www.)/g, "");
+//   const myHeaders = new Headers();
+//   myHeaders.append("Content-Type", "application/json");
 
-async function executaEnvio() {
-  document.querySelector("#sendMensage").disabled = true;
-  await enviar();
-  document.querySelector("#sendMensage").disabled = false;
-}
+//   let raw = JSON.stringify({
+//     de: `site@${url}`,
+//     para: ["contato@hi4u.me"],
+//     assunto: `Solicitação de contato pelo formulário do site ${url}`,
+//     mensagem: `Novo contato do site ${url}\n\n
+//                 Nome: ${document.querySelector("#name").value}\n\n
+//                 Website: ${document.querySelector("#website").value}\n\n
+//                 Email: ${document.querySelector("#email").value}\n\n
+//                 Telefone: ${document.querySelector("#tel").value}\n\n
+//                 Lingua: ${document.querySelector("#language").value}\n\n
+//                 Package: ${document.querySelector("#package").value}\n\n
+//                 `,
+//   });
 
-function activateTracking() {
-  let g = document.createElement("script");
-  g.setAttribute(
-    "src",
-    "https://www.googletagmanager.com/gtag/js?id=G-4V439Y8Y33"
-  ),
-    document.head.appendChild(g);
-  let gt = document.createElement("script");
-  (gt.text = `window.dataLayer = window.dataLayer || [];\n
-	  function gtag(){dataLayer.push(arguments);}\n
-	  gtag('js', new Date());\n
-	  gtag('config', 'G-4V439Y8Y33');`),
-    document.head.appendChild(gt);
+//   const requestOptions = {
+//     method: "POST",
+//     headers: myHeaders,
+//     body: raw,
+//   };
 
-  let f = document.createElement("script");
-  (f.text = `\n
-	  !function(f,b,e,v,n,t,s)\n 
-	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n
-	  n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n
-	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n
-	  n.queue=[];t=b.createElement(e);t.async=!0;\n
-	  t.src=v;s=b.getElementsByTagName(e)[0];\n
-	  s.parentNode.insertBefore(t,s)}(window, document,'script',\n
-	  'https://connect.facebook.net/en_US/fbevents.js');\n
-	  fbq('init', '200709611745559');\n 
-	  fbq('track', 'PageView');\n`),
-    document.head.appendChild(f);
-  let ft = document.createElement("noscript");
-  ft.setAttribute("height", "1"),
-    ft.setAttribute("width", "1"),
-    ft.setAttribute("style", "display:none"),
-    ft.setAttribute(
-      "src",
-      `https://www.facebook.com/tr?id=200709611745559&ev=PageView&noscript=1`
-    ),
-    document.head.appendChild(ft);
-  let c = document.createElement("script");
-  (c.text = `\n
-		(function (c, l, a, r, i, t, y) {
-			c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };\n
-			t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;\n
-			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);\n
-		})(window, document, "clarity", "script", "5j5c2163qz");`),
-    document.head.appendChild(c);
-}
+//   return await fetch(
+//     "https://services.rangell.com.br/v1/enviar",
+//     requestOptions
+//   )
+//     .then((response) => response.text())
+//     .then((result) => {
+//       console.log(result);
+//       window.alert(
+//         "Your request has been sent. We will get in touch with you soon. Thank you."
+//       );
+//       document.querySelector("#name").value = "";
+//       document.querySelector("#email").value = "";
+//       document.querySelector("#tel").value = "";
+//       document.querySelector("#website").value = "";
+//     })
+//     .catch((error) => {
+//       console.log("error", error);
+//       window.alert(
+//         "There is some data missing or an unexpected error has occurred. Check the information you entered or refresh the page and try again."
+//       );
+//     });
+// }
 
-const cookieContainer = document.querySelector(".cookies");
-const cookieAccept = document.querySelector(".cookieAccept");
+// async function executaEnvio() {
+//   document.querySelector("#sendMensage").disabled = true;
+//   await enviar();
+//   document.querySelector("#sendMensage").disabled = false;
+// }
 
-cookieAccept.addEventListener("click", () => {
-  cookieContainer.classList.remove("active");
-  localStorage.setItem("cookieAccept", "true");
-  activateTracking();
-  setTimeout(() => {
-    cookieContainer.classList.remove("display");
-  }, 2000);
-});
+// function activateTracking() {
+//   let g = document.createElement("script");
+//   g.setAttribute(
+//     "src",
+//     "https://www.googletagmanager.com/gtag/js?id=G-4V439Y8Y33"
+//   ),
+//     document.head.appendChild(g);
+//   let gt = document.createElement("script");
+//   (gt.text = `window.dataLayer = window.dataLayer || [];\n
+// 	  function gtag(){dataLayer.push(arguments);}\n
+// 	  gtag('js', new Date());\n
+// 	  gtag('config', 'G-4V439Y8Y33');`),
+//     document.head.appendChild(gt);
+
+//   let f = document.createElement("script");
+//   (f.text = `\n
+// 	  !function(f,b,e,v,n,t,s)\n 
+// 	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n
+// 	  n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n
+// 	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n
+// 	  n.queue=[];t=b.createElement(e);t.async=!0;\n
+// 	  t.src=v;s=b.getElementsByTagName(e)[0];\n
+// 	  s.parentNode.insertBefore(t,s)}(window, document,'script',\n
+// 	  'https://connect.facebook.net/en_US/fbevents.js');\n
+// 	  fbq('init', '200709611745559');\n 
+// 	  fbq('track', 'PageView');\n`),
+//     document.head.appendChild(f);
+//   let ft = document.createElement("noscript");
+//   ft.setAttribute("height", "1"),
+//     ft.setAttribute("width", "1"),
+//     ft.setAttribute("style", "display:none"),
+//     ft.setAttribute(
+//       "src",
+//       `https://www.facebook.com/tr?id=200709611745559&ev=PageView&noscript=1`
+//     ),
+//     document.head.appendChild(ft);
+//   let c = document.createElement("script");
+//   (c.text = `\n
+// 		(function (c, l, a, r, i, t, y) {
+// 			c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };\n
+// 			t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;\n
+// 			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);\n
+// 		})(window, document, "clarity", "script", "5j5c2163qz");`),
+//     document.head.appendChild(c);
+// }
+
+// const cookieContainer = document.querySelector(".cookies");
+// const cookieAccept = document.querySelector(".cookieAccept");
+
+// cookieAccept.addEventListener("click", () => {
+//   cookieContainer.classList.remove("active");
+//   localStorage.setItem("cookieAccept", "true");
+//   activateTracking();
+//   setTimeout(() => {
+//     cookieContainer.classList.remove("display");
+//   }, 2000);
+// });
