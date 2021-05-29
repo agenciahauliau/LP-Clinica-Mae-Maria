@@ -56,17 +56,12 @@ section.um {
 }
 
 section.um div.texto h1 {
-  font-family: Noto Serif;
+  font-family: Serif;
   margin-bottom: 21px;
 }
 
 section.um div.texto h2 {
   font-weight: 300;
-}
-
-section.um section.dois div.empresa div.sobre h3 {
-  font-family: Noto Serif;
-  margin-bottom: 21px;
 }
 
 section.um div.banner {
@@ -91,5 +86,9 @@ section.um div.banner div.imagem img {
   position: relative;
   bottom: 0;
   z-index: 5;
+}
+
+section.dois div.empresa div.sobre h3 {
+  font-family: Serif;
 }
 /*# sourceMappingURL=Style.css.map */

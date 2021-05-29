@@ -17,8 +17,6 @@ header {
         width: 100px;
       }
     }
-    label.iconeMenu {
-    }
     input {
       display: none;
     }
@@ -45,21 +43,11 @@ section.um {
 
   div.texto {
     h1 {
-      font-family: Noto Serif;
+      font-family: Serif;
       margin-bottom: 21px;
     }
     h2 {
       font-weight: 300;
-    }
-  }
-  section.dois {
-    div.empresa {
-      div.sobre {
-        h3 {
-          font-family: Noto Serif;
-          margin-bottom: 21px;
-        }
-      }
     }
   }
   div.banner {
@@ -82,6 +70,17 @@ section.um {
         position: relative;
         bottom: 0;
         z-index: 5;
+      }
+    }
+  }
+}
+
+section.dois {
+  div.empresa {
+    div.sobre {
+      h3 {
+        margin-bottom: 21px;
+        font-family: Serif;
       }
     }
   }
