@@ -92,6 +92,19 @@ section.dois {
       margin: 13px auto;
     }
   }
+  .selos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .marca{
+      width: 50%;
+      padding-right: 34px;
+    }
+    .simbolos{
+      width: 50%;
+      padding: 13px;
+    }
+  }
 }
 
 section.tres {
@@ -166,6 +179,7 @@ section.tres {
 section.quatro {
   margin-bottom: -50px;
   .exames {
+    width: 100%;
     height: 150vh;
     overflow: hidden;
     position: relative;
@@ -217,10 +231,54 @@ section.quatro {
   }
 }
 
-section.cinco {
+section.cinco{
+  .logos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 50px;
+      margin: 13px;
+    }
+  }
+}
+
+section.seis {
   button{
     svg{
       width: 50px;
     }
   }
+}
+
+section.sete{
+  .resultado{
+    position: relative;
+    .imagem{
+      filter: grayscale(100%);
+    }
+    .button{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      button{
+        padding: 8px 13px;
+        background: #694387;
+        color: #fff;
+        font-weight: 200;
+        font-size: 1.3em;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+footer{
+  background: #ddd;
 }
