@@ -31,29 +31,199 @@ header nav input {
   display: none;
 }
 
+header nav label {
+  width: 34px;
+  height: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1px;
+  position: relative;
+  z-index: 50;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header nav label .line {
+  height: 3px;
+  position: relative;
+  background: #000;
+  border-radius: 3px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+header nav label .line.one {
+  width: 100%;
+  left: 0;
+}
+
+header nav label .line.two {
+  width: 89%;
+  left: 0;
+}
+
+header nav label .line.three {
+  width: 55%;
+  left: 0;
+}
+
+header nav input:checked ~ label {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+header nav input:checked ~ label .line {
+  background: #555;
+}
+
+header nav input:checked ~ label .line.one {
+  width: 100%;
+  left: 0;
+}
+
+header nav input:checked ~ label .line.two {
+  width: 89%;
+  left: 11%;
+}
+
+header nav input:checked ~ label .line.three {
+  width: 55%;
+  left: 45%;
+}
+
 header nav .menus {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: -20;
   opacity: 0;
+  background: #dfdbe5;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+header nav .menus ul {
+  width: 55%;
+}
+
+header nav .menus ul.menu {
+  border-bottom: 1px solid #69438755;
+}
+
+header nav .menus ul li {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.3em;
+  opacity: 0;
+}
+
+header nav .menus ul li svg {
+  width: 21px;
+  margin: 0 13px;
+  fill: #694387;
+}
+
+header nav .menus ul li.endereco {
+  font-size: 1em;
 }
 
 header nav input:checked ~ .menus {
   z-index: 20;
   opacity: 1;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+header nav input:checked ~ .menus ul li:nth-child(1) {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+header nav input:checked ~ .menus ul li:nth-child(2) {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+header nav input:checked ~ .menus ul li:nth-child(3) {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+header nav input:checked ~ .menus ul li:nth-child(4) {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+header nav input:checked ~ .menus ul li:nth-child(5) {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 section {
   padding: 34px 8px;
+  overflow: hidden;
 }
 
 section.um {
   background: #dfdbe5;
-  overflow-x: hidden;
 }
 
 section.um div.texto h1 {
-  font-family: Serif;
   margin-bottom: 34px;
+  position: relative;
+  font-family: Serif;
+}
+
+section.um div.texto h1::after {
+  content: " ";
+  width: 34%;
+  height: 2px;
+  position: absolute;
+  bottom: -13px;
+  left: -5px;
+  background: #69438755;
+  border-radius: 2px;
 }
 
 section.um div.texto h3 {
@@ -86,12 +256,12 @@ section.um div.banner::before {
 
 section.um div.banner::after {
   content: " ";
-  width: 100%;
-  height: 55%;
+  width: 143px;
+  height: 89px;
   position: absolute;
-  top: 0;
+  top: 34%;
   left: 0;
-  background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 section.um div.banner div.imagem {

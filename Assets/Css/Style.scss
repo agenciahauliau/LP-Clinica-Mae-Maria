@@ -19,35 +19,128 @@ header {
     input {
       display: none;
     }
+    label {
+      width: 34px;
+      height: 21px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1px;
+      position: relative;
+      z-index: 50;
+      transition: 0.3s ease;
+      .line {
+        height: 3px;
+        position: relative;
+        background: #000;
+        border-radius: 3px;
+        transition: 0.2s ease;
+        &.one {
+          width: 100%;
+          left: 0;
+        }
+        &.two {
+          width: 89%;
+          left: 0;
+        }
+        &.three {
+          width: 55%;
+          left: 0;
+        }
+      }
+    }
+    input:checked ~ label {
+      transition: 0.2s ease;
+      .line {
+        background: #555;
+        &.one {
+          width: 100%;
+          left: 0;
+        }
+        &.two {
+          width: 89%;
+          left: 11%;
+        }
+        &.three {
+          width: 55%;
+          left: 45%;
+        }
+      }
+    }
     .menus {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: fixed;
+      top: 0;
+      left: 0;
       z-index: -20;
       opacity: 0;
+      background: #dfdbe5;
+      transition: 0.2s ease;
+      ul {
+        width: 55%;
+        &.menu {
+          border-bottom: 1px solid #69438755;
+        }
+        li {
+          width: 100%;
+          padding: 8px;
+          margin: 8px 0;
+          text-align: center;
+          font-weight: 300;
+          font-size: 1.3em;
+          opacity: 0;
+          svg {
+            width: 21px;
+            margin: 0 13px;
+            fill: #694387;
+          }
+          &.endereco {
+            font-size: 1em;
+          }
+        }
+      }
     }
 
     input:checked ~ .menus {
       z-index: 20;
       opacity: 1;
+      transition: 0.2s ease;
+
+      ul {
+        @for $i from 1 through 5 {
+          li:nth-child(#{$i}) {
+            opacity: 1;
+            transition: 0.3s ease-in;
+            transition-delay: #{$i * 0.2}s;
+          }
+        }
+      }
     }
   }
 }
 
 section {
   padding: 34px 8px;
+  overflow: hidden;
 }
 
 section.um {
   background: #dfdbe5;
-  overflow-x: hidden;
 
   div.texto {
     h1 {
-      font-family: Serif;
       margin-bottom: 34px;
+      position: relative;
+      font-family: Serif;
 
       &::after {
         content: " ";
-        width: 55%;
+        width: 34%;
         height: 2px;
         position: absolute;
         bottom: -13px;
@@ -88,10 +181,7 @@ section.um {
       position: absolute;
       top: 34%;
       left: 0;
-      background: url(
-        data:image/svg + xml,
-        %3Csvgwidth="10"height="10"viewBox="0 0 20 20"xmlns="http://www.w3.org/2000/svg"%3E%3Cgfill="%239C92AC"fill-opacity="0.5"fill-rule="evenodd"%3E%3Ccirclecx="3"cy="3"r="3"/%3E%3Ccirclecx="13"cy="13"r="3"/%3E%3C/g%3E%3C/svg%3E
-      );
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
     }
     div.imagem {
       display: flex;
