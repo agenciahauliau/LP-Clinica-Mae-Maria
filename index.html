@@ -96,14 +96,27 @@
             font-size: 0.5em;
         }
 
+        button {
+            padding: 8px 13px;
+            background: #694387;
+            color: #fff;
+            border-radius: 21px;
+            box-shadow: 2px 5px 13px -3px #69438755;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: 2px 5px 13px -3px #694387;
+            transition: 0.3s ease;
+        }
+
         html {
             width: 100vw;
-            height: fit-content;
             font-size: 14px;
+            scroll-behavior: smooth;
         }
 
         body {
-            height: fit-content;
             overflow-x: hidden;
         }
 
@@ -111,92 +124,6 @@
             width: 100%;
             max-width: 1240px;
             margin: auto;
-        }
-
-        div.cookies {
-            display: none;
-        }
-
-        div.cookies {
-            flex-direction: column;
-            position: fixed;
-            bottom: -50px;
-            left: 0;
-            z-index: 100;
-            background-color: #fff9;
-            padding: 13px 34px;
-            opacity: 0;
-            transition: 0.5s ease 0.5s;
-        }
-
-        div.cookies p {
-            color: #000;
-            line-height: 1.5em;
-            transition: 0.5s ease 0.3s;
-            opacity: 0;
-        }
-
-        div.cookies div {
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: fit-content;
-            margin: 13px auto;
-            position: relative;
-        }
-
-        div.cookies div button {
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: fit-content;
-            padding: 8px 13px;
-            background: #00ff8055;
-            color: #fff;
-            font-weight: 700;
-            transition: 0.5s ease;
-            opacity: 0;
-        }
-
-        div.cookies div button::after {
-            content: " ";
-            width: 100%;
-            height: 100%;
-            border: 1px solid #fff5;
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            transition: 0.2s ease;
-        }
-
-        div.cookies.display {
-            display: flex;
-        }
-
-        div.cookies.active {
-            bottom: 0;
-            opacity: 1;
-            transition: 0.5s ease;
-        }
-
-        div.cookies.active p {
-            transition: 0.5s ease 0.5s;
-            opacity: 1;
-        }
-
-        div.cookies.active div button {
-            transition: 0.5s ease 0.8s;
-            opacity: 1;
-        }
-
-        div.cookies.active div button:hover {
-            background: #00ff80;
-            color: #000;
-            transition: 0.3s ease 0s;
-        }
-
-        div.cookies.active div button:hover::after {
-            border: 1px solid #fff;
-            transform: scale(1.05);
-            transition: 0.3s ease;
         }
 
         @media screen and (min-width: 820px) {
@@ -252,6 +179,7 @@
             <div class="texto">
                 <h1>Uma boa imagem necessita de um bom radiologista que a interprete</h1>
                 <h3>É por isso que desde 2013 trabalhamos em Inhumas</h3>
+                <a href="#exames"><button>Ver exames</button></a>
             </div>
             <div class="banner">
                 <div class="imagem">
@@ -292,7 +220,9 @@
                 </div>
                 <div class="simbolos">
                     <div class="imagem">
-                        <img src="Assets/Imagens/selos-qualidade.png" alt="Selo de qualidade e excelência do Colégio Brasileiro de Radiologia e Diagnósticos por Imagem" title="Selo de qualidade e excelência do Colégio Brasileiro de Radiologia e Diagnósticos por Imagem" />
+                        <img src="Assets/Imagens/selos-qualidade.png"
+                            alt="Selo de qualidade e excelência do Colégio Brasileiro de Radiologia e Diagnósticos por Imagem"
+                            title="Selo de qualidade e excelência do Colégio Brasileiro de Radiologia e Diagnósticos por Imagem" />
                     </div>
                 </div>
             </div>
@@ -366,7 +296,7 @@
             </div>
         </div>
     </section>
-    <section class="quatro">
+    <section id="exames" class="quatro">
         <div class="texto">
             <h2>Exames</h2>
         </div>
@@ -559,16 +489,21 @@
     <section class="cinco">
         <div class="container">
             <div class="logos">
-                <img src="Assets/Imagens/planos/bradesco+saude.png" alt="Plano de saúde Bradesco saúde" title="Plano de saúde Bradesco saúde"/>
-                <img src="Assets/Imagens/planos/caesan.png" alt="Plano de saúde CAESAN" title="Plano de saúde CAESAN"/>
-                <img src="Assets/Imagens/planos/capesesp.png" alt="Plano de saúde Capesesp" title="Plano de saúde Capesesp"/>
-                <img src="Assets/Imagens/planos/cassi.png" alt="Plano de saúde CASSI" title="Plano de saúde CASSI"/>
-                <img src="Assets/Imagens/planos/celgmed.png" alt="Plano de saúde Celg Med" title="Plano de saúde Celg Med"/>
-                <img src="Assets/Imagens/planos/geap.png" alt="Plano de saúde GEAP" title="Plano de saúde GEAP"/>
-                <img src="Assets/Imagens/planos/ipasgo.png" alt="Plano de saúde IPASGO" title="Plano de saúde IPASGO"/>
-                <img src="Assets/Imagens/planos/posta+saude.png" alt="Plano de saúde Postal Saúde" title="Plano de saúde Postal Saúde"/>
-                <img src="Assets/Imagens/planos/saude+caixa.png" alt="Plano de saúde Saúde caixa" title="Plano de saúde Saúde caixa"/>
-                <img src="Assets/Imagens/planos/unimed.png" alt="Plano de saúde Unimed" title="Plano de saúde Unimed"/>
+                <img src="Assets/Imagens/planos/bradesco+saude.png" alt="Plano de saúde Bradesco saúde"
+                    title="Plano de saúde Bradesco saúde" />
+                <img src="Assets/Imagens/planos/caesan.png" alt="Plano de saúde CAESAN" title="Plano de saúde CAESAN" />
+                <img src="Assets/Imagens/planos/capesesp.png" alt="Plano de saúde Capesesp"
+                    title="Plano de saúde Capesesp" />
+                <img src="Assets/Imagens/planos/cassi.png" alt="Plano de saúde CASSI" title="Plano de saúde CASSI" />
+                <img src="Assets/Imagens/planos/celgmed.png" alt="Plano de saúde Celg Med"
+                    title="Plano de saúde Celg Med" />
+                <img src="Assets/Imagens/planos/geap.png" alt="Plano de saúde GEAP" title="Plano de saúde GEAP" />
+                <img src="Assets/Imagens/planos/ipasgo.png" alt="Plano de saúde IPASGO" title="Plano de saúde IPASGO" />
+                <img src="Assets/Imagens/planos/posta+saude.png" alt="Plano de saúde Postal Saúde"
+                    title="Plano de saúde Postal Saúde" />
+                <img src="Assets/Imagens/planos/saude+caixa.png" alt="Plano de saúde Saúde caixa"
+                    title="Plano de saúde Saúde caixa" />
+                <img src="Assets/Imagens/planos/unimed.png" alt="Plano de saúde Unimed" title="Plano de saúde Unimed" />
             </div>
         </div>
     </section>
