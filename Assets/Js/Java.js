@@ -6,62 +6,93 @@ verMaisExames.addEventListener("click", function () {
   document.querySelector(".exames").classList.toggle("verExames");
 });
 
-console.log(verMaisExames);
-
-// window.onload = function () {
-//   scrollSection();
-//   if (!localStorage.getItem("cookieAccept")) {
-//     cookieContainer.classList.add("display");
-//     setTimeout(() => {
-//       cookieContainer.classList.add("active");
-//     }, 500);
-//   }
-// };
-
-
-window.onscroll = function () {
-  // scrollSection();
+window.onload = function () {
+  scrollSection();
 };
 
-// function scrollSection() {
-//   const sections = document.querySelectorAll("section, header, footer");
-//   const astronaut = document.querySelector(".three .astronaut");
-//   const quotes = document.querySelectorAll(".four .testimonial");
+window.onscroll = function () {
+  scrollSection();
+};
 
-//   for (const section of sections) {
-//     if (
-//       ((section.offsetTop - window.pageYOffset) * 100) / window.innerHeight >
-//       70
-//     ) {
-//       section.classList.remove("active");
-//     } else {
-//       section.classList.add("active");
-//     }
-//   }
+function scrollSection() {
+  const sections = document.querySelectorAll("section, header, footer");
+  const astronaut = document.querySelector(".three .astronaut");
+  const quotes = document.querySelectorAll(".four .testimonial");
 
-//   if (
-//     ((sections.item(3).offsetTop - window.pageYOffset) * 100) /
-//       window.innerHeight >
-//     35
-//   ) {
-//     astronaut.classList.remove("active");
-//   } else {
-//     astronaut.classList.add("active");
-//   }
+  for (const section of sections) {
+    if (
+      ((section.offsetTop - window.pageYOffset) * 100) / window.innerHeight >
+      70
+    ) {
+      section.classList.remove("active");
+    } else {
+      section.classList.add("active");
+    }
+  }
 
-//   for (const quote of quotes) {
-//     if (
-//       ((sections.item(4).offsetTop + quote.offsetTop - window.pageYOffset) *
-//         100) /
-//         window.innerHeight >
-//       60
-//     ) {
-//       quote.classList.remove("active");
-//     } else {
-//       quote.classList.add("active");
-//     }
-//   }
-// }
+  const equipe = document.querySelector(".equipe");
+  
+  if (
+    ((equipe.offsetTop - window.pageYOffset) *
+      100) /
+      window.innerHeight >
+    60
+  ) {
+    equipe.classList.remove("active");
+  } else {
+    equipe.classList.add("active");
+  }
+
+  const pessoas = document.querySelectorAll(".pessoa");
+
+  for (const pessoa of pessoas) {
+    if (
+      ((pessoa.offsetTop - window.pageYOffset) *
+        100) /
+        window.innerHeight >
+      80
+    ) {
+      pessoa.classList.remove("active");
+    } else {
+      pessoa.classList.add("active");
+    }
+  }
+
+  const exames = document.querySelectorAll(".exame");
+
+  for (const exame of exames) {
+    if (
+      ((sections.item(4).offsetTop + exame.offsetTop - window.pageYOffset) *
+        100) /
+        window.innerHeight >
+      60
+    ) {
+      exame.classList.remove("active");
+    } else {
+      exame.classList.add("active");
+    }
+    
+  }
+}
+
+const preparos = document.querySelectorAll(".saberPreparo")
+const voltars = document.querySelectorAll(".voltar")
+
+for(let preparo of preparos){
+  const exameFlip = preparo.parentNode.parentNode
+  preparo.addEventListener('click', function(){
+    exameFlip.classList.add("flip")
+  })
+}
+
+for(let voltar of voltars){
+  const exameFlip = voltar.parentNode.parentNode
+
+  voltar.addEventListener('click', function(){
+    exameFlip.classList.remove("flip")
+    console.log(exameFlip)
+  })
+}
 
 // const services = document.querySelectorAll(".boxServices div[class*='Box']");
 

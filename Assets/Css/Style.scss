@@ -4,7 +4,7 @@ header {
   padding: 13px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 20;
   background: #dfdbe5;
   nav {
     display: flex;
@@ -69,7 +69,7 @@ header {
     }
     .menus {
       width: 100%;
-      height: 100%;
+      height: 0%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -77,9 +77,10 @@ header {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: -20;
+      z-index: 0;
       opacity: 0;
       background: #dfdbe5;
+      overflow: hidden;
       transition: 0.2s ease;
       ul {
         width: 55%;
@@ -107,6 +108,7 @@ header {
     }
 
     input:checked ~ .menus {
+      height: 100%;
       z-index: 20;
       opacity: 1;
       transition: 0.2s ease;
@@ -125,6 +127,7 @@ header {
 }
 
 section {
+  max-width: 100vw;
   padding: 34px 8px;
   overflow: hidden;
 }
@@ -132,30 +135,36 @@ section {
 section.um {
   background: #dfdbe5;
 
-  div.texto {
+  .texto {
     h1 {
       margin-bottom: 34px;
       position: relative;
       font-family: Serif;
+      opacity: 0;
 
       &::after {
         content: " ";
-        width: 34%;
-        height: 2px;
+        width: 143px;
+        height: 89px;
         position: absolute;
-        bottom: -13px;
-        left: -5px;
-        background: #69438755;
-        border-radius: 2px;
+        bottom: -13%;
+        left: -8%;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0;
       }
     }
     h3 {
       font-weight: 300;
       margin-bottom: 21px;
+      opacity: 0;
     }
-    button {
-      position: relative;
-      z-index: 10;
+    a {
+      opacity: 0;
+      display: block;
+      button {
+        position: relative;
+        z-index: 10;
+      }
     }
   }
   div.banner {
@@ -164,7 +173,7 @@ section.um {
 
     &::before {
       content: " ";
-      width: 100%;
+      width: 0;
       height: 55%;
       position: absolute;
       bottom: 0;
@@ -182,12 +191,15 @@ section.um {
       top: 34%;
       left: 0;
       background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0;
     }
     div.imagem {
       display: flex;
       justify-content: flex-end;
       position: relative;
+      right: -20px;
       z-index: 5;
+      opacity: 0;
       img {
         width: 90%;
         height: 90%;
@@ -198,33 +210,77 @@ section.um {
   }
 }
 
+section.um.active {
+  .texto {
+    @for $i from 1 to 4 {
+      > *:nth-child(#{$i}) {
+        opacity: 1;
+        transition: 0.3s ease;
+        transition-delay: #{$i * 0.15}s;
+      }
+    }
+    h1 {
+      &::after {
+        opacity: 1;
+        transition: 0.5s ease 1s;
+      }
+    }
+  }
+  div.banner {
+    &::before {
+      width: 100%;
+      transition: 0.5s ease;
+    }
+    &::after {
+      opacity: 1;
+      transition: 0.5s ease 0.8s;
+    }
+    div.imagem {
+      opacity: 1;
+      right: 0;
+      transition: 0.5s ease 0.5s;
+    }
+  }
+}
+
 section.dois {
   h3 {
     margin: 0 13px 21px;
     font-family: Noto Serif;
+    opacity: 0;
   }
 
   p {
     margin: 21px 13px;
+    opacity: 0;
   }
 
   .missao {
     .imagem {
       height: 244px;
       margin: 13px auto;
+      opacity: 0;
     }
   }
-  .selos {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    .marca {
-      width: 50%;
-      padding-right: 34px;
+}
+
+section.dois.active {
+  .sobre {
+    @for $i from 1 to 3 {
+      > *:nth-child(#{$i}) {
+        opacity: 1;
+        transition: 0.5s ease;
+        transition-delay: #{$i * 0.15}s;
+      }
     }
-    .simbolos {
-      width: 50%;
-      padding: 13px;
+  }
+  .missao {
+    @for $i from 1 to 3 {
+      > *:nth-child(#{$i}) {
+        opacity: 1;
+        transition: 0.5s ease;
+        transition-delay: #{$i * 0.2}s;
+      }
     }
   }
 }
@@ -236,6 +292,27 @@ section.tres {
       font-family: Noto Serif;
       margin: 0 13px 21px;
     }
+    opacity: 0;
+  }
+  .selos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 21px;
+    p {
+      margin: 0 13px 21px;
+      opacity: 0;
+    }
+    .marca {
+      width: 50%;
+      padding-right: 34px;
+      opacity: 0;
+    }
+    .simbolos {
+      width: 50%;
+      padding: 13px;
+      opacity: 0;
+    }
   }
   .equipe {
     .imagem {
@@ -245,7 +322,7 @@ section.tres {
       position: relative;
       &::before {
         content: " ";
-        width: 110%;
+        width: 0%;
         height: 55%;
         position: absolute;
         bottom: 0;
@@ -255,10 +332,23 @@ section.tres {
         border-radius: 0 21px 21px 0;
         box-shadow: 0 13px 34px -21px #694387;
       }
+      &::after {
+        content: " ";
+        width: 143px;
+        height: 89px;
+        position: absolute;
+        bottom: -21px;
+        right: -21px;
+        z-index: 6;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0;
+      }
       img {
         position: relative;
+        left: -10px;
         z-index: 5;
         border-radius: 21px;
+        opacity: 0;
       }
     }
     .pessoas {
@@ -272,12 +362,14 @@ section.tres {
         background: #694387;
         color: #fff;
         border-radius: 8px;
+        opacity: 0;
         .nome {
           width: 100%;
           min-height: 34px;
           display: flex;
           align-items: center;
           padding: 13px;
+          opacity: 0;
           h4 {
             text-align: center;
             font-size: Noto Serif;
@@ -294,6 +386,64 @@ section.tres {
             font-weight: 200;
             font-size: 0.8em;
             text-align: center;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.tres.active {
+  .texto {
+    opacity: 1;
+    transition: 0.3s ease 0.45s;
+  }
+  .selos {
+    p {
+      opacity: 1;
+      transition: 0.3s ease;
+    }
+    .marca {
+      opacity: 1;
+      transition: 0.3s ease 0.3s;
+    }
+    .simbolos {
+      opacity: 1;
+      transition: 0.3s ease 0.4s;
+    }
+  }
+  .equipe.active {
+    .imagem {
+      &::before {
+        width: 110%;
+        transition: 0.3s ease;
+      }
+      &::after {
+        opacity: 1;
+        transition: 0.3s ease 0.8s;
+      }
+      img {
+        left: 0;
+        opacity: 1;
+        transition: 0.5s ease 0.3s;
+      }
+    }
+    .pessoas {
+      .pessoa.active {
+        opacity: 1;
+        transition: 0.3s ease;
+        .nome {
+          opacity: 1;
+          transition: 0.3s ease 0.3;
+        }
+        .infoPessoas {
+          @for $i from 1 to 3 {
+            > *:nth-child(#{$i}) {
+              opacity: 1;
+              transition: 0.5s ease;
+              transition-delay: #{($i * 0.2) + 0.3}s;
+            }
           }
         }
       }
@@ -308,24 +458,49 @@ section.quatro {
     height: 150vh;
     overflow: hidden;
     position: relative;
-    z-index: -1;
     .exame {
       padding: 21px;
       margin: 13px;
       background: #dfdbe5;
       border-radius: 8px;
+      opacity: 0;
+      transition: 0.3s ease;
       .nome {
         margin-bottom: 21px;
+        opacity: 0;
+        transition: 0.3s ease;
         h3 {
           font-family: Noto Serif;
         }
       }
       .info {
         margin-bottom: 13px;
+        opacity: 0;
+        transition: 0.3s ease;
+        p{
+          display: block;
+        }
+        .preparo{
+          display: none;
+        }
       }
       .botoes {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0;
+        transition: 0.3s ease;
         button {
           margin-right: 8px;
+          display: block;
+        }
+        .voltar{
+          display: none;
+          svg{
+            width: 13px;
+            margin-right: 8px;
+            fill: #fff;
+            transition: .3s ease;
+          }
         }
       }
     }
@@ -340,6 +515,8 @@ section.quatro {
     justify-content: center;
     align-items: center;
     margin-top: -100px;
+    position: relative;
+    z-index: 1;
     background: linear-gradient(0deg, #fff 55%, transparent);
     button {
       background: none;
@@ -347,6 +524,59 @@ section.quatro {
       font-size: 2em;
       .fechar {
         display: none;
+      }
+    }
+  }
+}
+
+section.quatro.active {
+  .exames {
+    .exame.active {
+      opacity: 1;
+      transition: 0.5s ease;
+      .nome {
+        opacity: 1;
+        transition: 0.3s ease;
+      }
+      .info {
+        opacity: 1;
+        transition: 0.3s ease 0.5s;
+      }
+      .botoes {
+        opacity: 1;
+        transition: 0.3s ease 0.8s;
+      }
+      &.flip{
+        transform: rotateY(180deg);
+        .nome{
+          transform: rotateY(180deg);
+        }
+        .info{
+          p{
+            display: none;
+          }
+          .preparo{
+            display: block;
+            transform: rotateY(180deg);
+          }
+        }
+        .botoes{
+          button{
+            display: none;
+          }
+          .voltar {
+            display: flex;
+            align-items: center;
+            transform: rotateY(180deg);
+
+            &:hover{
+              svg{
+                margin-right: 13px;
+                transition: .3s ease;
+              }
+            }
+          }
+        }
       }
     }
   }
