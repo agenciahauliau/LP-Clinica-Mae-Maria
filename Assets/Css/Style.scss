@@ -458,6 +458,7 @@ section.quatro {
     height: 150vh;
     overflow: hidden;
     position: relative;
+    transition: .8s ;
     .exame {
       padding: 21px;
       margin: 13px;
@@ -475,13 +476,19 @@ section.quatro {
       }
       .info {
         margin-bottom: 13px;
+        position: relative;
         opacity: 0;
         transition: 0.3s ease;
         p{
-          display: block;
+          position: relative;
+          opacity: 1;
+          z-index: 1;
         }
         .preparo{
-          display: none;
+          position: absolute;
+          top: 0;
+          right: 0;
+          opacity: 0;
         }
       }
       .botoes {
@@ -553,10 +560,12 @@ section.quatro.active {
         }
         .info{
           p{
-            display: none;
+            opacity: 0;
+          z-index: 0;
           }
           .preparo{
-            display: block;
+            opacity: 1;
+            z-index: 1;
             transform: rotateY(180deg);
           }
         }

@@ -619,6 +619,8 @@ section.quatro .exames {
   height: 150vh;
   overflow: hidden;
   position: relative;
+  -webkit-transition: .8s;
+  transition: .8s;
 }
 
 section.quatro .exames .exame {
@@ -644,17 +646,23 @@ section.quatro .exames .exame .nome h3 {
 
 section.quatro .exames .exame .info {
   margin-bottom: 13px;
+  position: relative;
   opacity: 0;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
 section.quatro .exames .exame .info p {
-  display: block;
+  position: relative;
+  opacity: 1;
+  z-index: 1;
 }
 
 section.quatro .exames .exame .info .preparo {
-  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
 }
 
 section.quatro .exames .exame .botoes {
@@ -755,11 +763,13 @@ section.quatro.active .exames .exame.active.flip .nome {
 }
 
 section.quatro.active .exames .exame.active.flip .info p {
-  display: none;
+  opacity: 0;
+  z-index: 0;
 }
 
 section.quatro.active .exames .exame.active.flip .info .preparo {
-  display: block;
+  opacity: 1;
+  z-index: 1;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }

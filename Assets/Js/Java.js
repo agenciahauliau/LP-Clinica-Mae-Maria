@@ -65,7 +65,7 @@ function scrollSection() {
       ((sections.item(4).offsetTop + exame.offsetTop - window.pageYOffset) *
         100) /
         window.innerHeight >
-      60
+      80
     ) {
       exame.classList.remove("active");
     } else {
