@@ -3,7 +3,7 @@
 const verMaisExames = document.querySelector(".verMais .ver");
 
 verMaisExames.addEventListener("click", function () {
-  document.querySelector(".exames").classList.toggle("verExames");
+  document.querySelector(".quatro").classList.toggle("verExames");
 });
 
 window.onload = function () {
@@ -98,7 +98,6 @@ for(let voltar of voltars){
 
 // for (const idx in services) {
 //   const scrollTwo = document.querySelector(".two .scroll");
-
 //   services[idx].onclick = function () {
 //     scrollTwo.scrollTo({
 //       top: 0,
