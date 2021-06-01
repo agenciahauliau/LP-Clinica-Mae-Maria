@@ -84,9 +84,7 @@ header {
         overflow: hidden;
         transition: 0.2s ease;
         ul {
-          width: 55%;
-          display: flex;
-          align-items: center;
+          width: 89%;
           &.menu {
             border-bottom: 1px solid #69438755;
           }
@@ -104,11 +102,12 @@ header {
               fill: #694387;
             }
             &.telefone {
-              height: fit-content;
+              width: fit-content;
+              height: fit-content;              
               padding: 8px 13px;
-              margin: 0 8px;
+              margin: 13px auto;
               background: #694387;
-              border-radius: 20px;
+              border-radius: 21px;
               a {
                 color: #fff;
               }
@@ -652,7 +651,7 @@ section.cinco {
     justify-content: center;
     align-items: center;
     img {
-      width: 50px;
+      width: 55px;
       margin: 13px;
       opacity: 0;
     }
@@ -779,8 +778,9 @@ footer {
           position: relative;
           opacity: 1;
           ul {
-            display: flex;
             width: fit-content;
+            display: flex;
+            align-items: center;
             &.menu {
               border-bottom: none;
             }
@@ -796,6 +796,9 @@ footer {
                 width: 21px;
                 margin: 0 13px;
                 fill: #694387;
+              }
+              &.telefone {
+                margin: 0 8px;
               }
               &.endereco {
                 display: none;
@@ -911,6 +914,14 @@ footer {
     }
     .verMais {
       display: none;
+    }
+  }
+  section.cinco {
+    .logos {
+      img {
+        width: 89px;
+        margin: 21px 34px;
+      }
     }
   }
   section.sete {

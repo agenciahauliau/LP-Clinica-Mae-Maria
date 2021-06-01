@@ -94,18 +94,18 @@ for(let voltar of voltars){
   })
 }
 
-// const services = document.querySelectorAll(".boxServices div[class*='Box']");
+const exames = document.querySelectorAll(".exame");
 
-// for (const idx in services) {
-//   const scrollTwo = document.querySelector(".two .scroll");
-//   services[idx].onclick = function () {
-//     scrollTwo.scrollTo({
-//       top: 0,
-//       left: idx * services[0].offsetWidth - 40,
-//       behavior: "smooth",
-//     });
-//   };
-// }
+for (const idx in exames) {
+  const scrollQuatro = document.querySelector(".quatro .scroll");
+  services[idx].onclick = function () {
+    exames.scrollTo({
+      top: 0,
+      left: idx * services[0].offsetWidth - 40,
+      behavior: "smooth",
+    });
+  };
+}
 
 // const pickMes = document.querySelectorAll(
 //   ".textInformation div[class*='Text'] .text button"
