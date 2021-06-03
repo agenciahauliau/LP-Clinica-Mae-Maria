@@ -225,6 +225,10 @@ section {
   overflow: hidden;
 }
 
+.local {
+  height: 34px;
+}
+
 section.um {
   background: #dfdbe5;
 }
@@ -247,8 +251,9 @@ section.um .texto h1::after {
   opacity: 0;
 }
 
-section.um .texto h3 {
+section.um .texto h2 {
   font-weight: 300;
+  font-size: 1.5em;
   margin-bottom: 21px;
   opacity: 0;
 }
@@ -629,6 +634,11 @@ section.tres.active .equipe.active .pessoas .pessoa.active .infoPessoas > *:nth-
 
 section.quatro {
   margin-bottom: -50px;
+}
+
+section.quatro .esquerda,
+section.quatro .direita {
+  display: none;
 }
 
 section.quatro .exames {
@@ -1029,7 +1039,89 @@ section.sete.active:hover .resultado .imagem {
 }
 
 footer {
+  padding: 34px 8px 0;
+  margin-top: 100px;
   background: #ddd;
+}
+
+footer .mapa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .mapa iframe {
+  width: 89%;
+  height: 233px;
+  margin: -89px auto 0;
+  border-radius: 21px;
+  overflow: hidden;
+}
+
+footer .mapa p {
+  padding: 24px;
+  text-align: center;
+}
+
+footer .informacoes {
+  font-size: 12px;
+}
+
+footer .informacoes .contatos {
+  min-width: 144px;
+}
+
+footer .informacoes .contatos ul li {
+  margin: 13px;
+  font-size: 1em;
+  text-align: center;
+}
+
+footer .informacoes .contatos ul li svg {
+  width: 21px;
+  margin: 8px;
+}
+
+footer .informacoes .logoFooter {
+  min-width: 144px;
+}
+
+footer .informacoes .logoFooter .logo a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  margin: 21px auto;
+}
+
+footer .informacoes .logoFooter .logo a img {
+  width: 89px;
+}
+
+footer .informacoes .siteMap {
+  margin: 21px;
+}
+
+footer .informacoes .siteMap ul li {
+  margin: 8px;
+  text-align: center;
+}
+
+footer .linhaRodape {
+  border-top: solid 1px #fff;
+}
+
+footer .linhaRodape .direitos {
+  font-size: 12px;
+}
+
+footer .linhaRodape .direitos p {
+  margin: 8px;
+  text-align: center;
 }
 
 @media screen and (min-width: 820px) {
@@ -1204,10 +1296,63 @@ footer {
   section.tres .equipe .pessoas .pessoa .infoPessoas p {
     margin-bottom: 5px;
   }
+  section.quatro .container {
+    position: relative;
+  }
+  section.quatro .esquerda,
+  section.quatro .direita {
+    width: 89px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 13px;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+  }
+  section.quatro .esquerda svg,
+  section.quatro .direita svg {
+    -webkit-transition: 0.15s ease-in;
+    transition: 0.15s ease-in;
+  }
+  section.quatro .esquerda {
+    top: 0;
+    left: 0;
+    background: -webkit-gradient(linear, left top, right top, color-stop(25%, #fff), to(transparent));
+    background: linear-gradient(90deg, #fff 25%, transparent);
+  }
+  section.quatro .esquerda.none {
+    opacity: 0;
+  }
+  section.quatro .esquerda:hover svg {
+    -webkit-filter: drop-shadow(-5px 5px 5px #0005);
+            filter: drop-shadow(-5px 5px 5px #0005);
+    -webkit-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+  }
+  section.quatro .direita {
+    top: 0;
+    right: 0;
+    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(75%, #fff));
+    background: linear-gradient(90deg, transparent, #fff 75%);
+  }
+  section.quatro .direita.none {
+    opacity: 0;
+  }
+  section.quatro .direita:hover svg {
+    -webkit-filter: drop-shadow(5px 5px 5px #0005);
+            filter: drop-shadow(5px 5px 5px #0005);
+    -webkit-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+  }
   section.quatro .scroll {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 100%;
+    position: relative;
+    overflow-x: scroll;
+    scrollbar-height: none;
+  }
+  section.quatro .scroll::-webkit-scrollbar {
+    height: 0;
   }
   section.quatro .scroll .exames {
     width: -webkit-fit-content;
@@ -1220,7 +1365,29 @@ footer {
   }
   section.quatro .scroll .exames .exame {
     width: 377px;
-    height: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  section.quatro .scroll .exames .exame .nome {
+    height: 89px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.quatro .scroll .exames .exame .botoes {
+    margin-top: 13px;
   }
   section.quatro .verMais {
     display: none;
@@ -1244,6 +1411,50 @@ footer {
   }
   section.sete .resultado .button > h3 {
     opacity: 1;
+  }
+  footer .mapa iframe {
+    height: 377px;
+  }
+  footer .informacoes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 12px;
+  }
+  footer .informacoes .contatos ul li {
+    margin: 13px;
+    font-size: 1em;
+    text-align: center;
+  }
+  footer .informacoes .contatos ul li svg {
+    width: 21px;
+    margin: 8px;
+  }
+  footer .informacoes .logoFooter .logo img {
+    width: 89px;
+  }
+  footer .informacoes .siteMap {
+    margin: 21px;
+  }
+  footer .informacoes .siteMap ul li {
+    margin: 8px;
+    text-align: center;
+  }
+  footer .linhaRodape {
+    border-top: solid 1px #fff;
+  }
+  footer .linhaRodape .direitos {
+    font-size: 12px;
+  }
+  footer .linhaRodape .direitos p {
+    margin: 8px;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=Style.css.map */

@@ -103,7 +103,7 @@ header {
             }
             &.telefone {
               width: fit-content;
-              height: fit-content;              
+              height: fit-content;
               padding: 8px 13px;
               margin: 13px auto;
               background: #694387;
@@ -145,6 +145,10 @@ section {
   overflow: hidden;
 }
 
+.local {
+  height: 34px;
+}
+
 section.um {
   background: #dfdbe5;
 
@@ -166,8 +170,9 @@ section.um {
         opacity: 0;
       }
     }
-    h3 {
+    h2 {
       font-weight: 300;
+      font-size: 1.5em;
       margin-bottom: 21px;
       opacity: 0;
     }
@@ -466,6 +471,10 @@ section.tres.active {
 
 section.quatro {
   margin-bottom: -50px;
+  .esquerda,
+  .direita {
+    display: none;
+  }
   .exames {
     width: 100%;
     height: 150vh;
@@ -754,7 +763,73 @@ section.sete.active {
 }
 
 footer {
+  padding: 34px 8px 0;
+  margin-top: 100px;
   background: #ddd;
+  .mapa {
+    display: flex;
+    flex-direction: column;
+    iframe {
+      width: 89%;
+      height: 233px;
+      margin: -89px auto 0;
+      border-radius: 21px;
+      overflow: hidden;
+    }
+    p {
+      padding: 24px;
+      text-align: center;
+    }
+  }
+  .informacoes {
+    font-size: 12px;
+    .contatos {
+      min-width: 144px;
+      ul {
+        li {
+          margin: 13px;
+          font-size: 1em;
+          text-align: center;
+          svg {
+            width: 21px;
+            margin: 8px;
+          }
+        }
+      }
+    }
+    .logoFooter {
+      min-width: 144px;
+      .logo {
+        a {
+          width: fit-content;
+          display: block;
+          margin: 21px auto;
+          img {
+            width: 89px;
+          }
+        }
+      }
+    }
+    .siteMap {
+      margin: 21px;
+      ul {
+        li {
+          margin: 8px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .linhaRodape {
+    border-top: solid 1px #fff;
+    .direitos {
+      font-size: 12px;
+      p {
+        margin: 8px;
+        text-align: center;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 820px) {
@@ -900,15 +975,75 @@ footer {
     }
   }
   section.quatro {
+    .container {
+      position: relative;
+    }
+    .esquerda,
+    .direita {
+      width: 89px;
+      display: flex;
+      padding: 13px;
+      height: 100%;
+      position: absolute;
+      z-index: 2;
+      svg {
+        transition: 0.15s ease-in;
+      }
+    }
+    .esquerda {
+      &.none {
+        opacity: 0;
+      }
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg, #fff 25%, transparent);
+      &:hover {
+        svg {
+          filter: drop-shadow(-5px 5px 5px #0005);
+          transition: 0.15s ease-out;
+        }
+      }
+    }
+    .direita {
+      &.none {
+        opacity: 0;
+      }
+      top: 0;
+      right: 0;
+      background: linear-gradient(90deg, transparent, #fff 75%);
+      &:hover {
+        svg {
+          filter: drop-shadow(5px 5px 5px #0005);
+          transition: 0.15s ease-out;
+        }
+      }
+    }
     .scroll {
-      width: fit-content;
+      width: 100%;
+      position: relative;
+      overflow-x: scroll;
+      scrollbar-height: none;
+      &::-webkit-scrollbar {
+        height: 0;
+      }
       .exames {
         width: fit-content;
         height: 100%;
         display: flex;
         .exame {
           width: 377px;
-          height: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .nome {
+            height: 89px;
+            display: flex;
+            align-items: center;
+          }
+          .botoes {
+            margin-top: 13px;
+          }
         }
       }
     }
@@ -936,6 +1071,58 @@ footer {
         position: relative;
         > h3 {
           opacity: 1;
+        }
+      }
+    }
+  }
+  footer {
+    .mapa {
+      iframe {
+        height: 377px;
+      }
+    }
+    .informacoes {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      .contatos {
+        ul {
+          li {
+            margin: 13px;
+            font-size: 1em;
+            text-align: center;
+            svg {
+              width: 21px;
+              margin: 8px;
+            }
+          }
+        }
+      }
+      .logoFooter {
+        .logo {
+          img {
+            width: 89px;
+          }
+        }
+      }
+      .siteMap {
+        margin: 21px;
+        ul {
+          li {
+            margin: 8px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .linhaRodape {
+      border-top: solid 1px #fff;
+      .direitos {
+        font-size: 12px;
+        p {
+          margin: 8px;
+          text-align: center;
         }
       }
     }

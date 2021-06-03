@@ -8,6 +8,10 @@ verMaisExames.addEventListener("click", function () {
 
 window.onload = function () {
   scrollSection();
+
+  if (scrollQuatro.scrollLeft === 0) {
+    esquerda.classList.add("none");
+  }
 };
 
 window.onscroll = function () {
@@ -31,11 +35,9 @@ function scrollSection() {
   }
 
   const equipe = document.querySelector(".equipe");
-  
+
   if (
-    ((equipe.offsetTop - window.pageYOffset) *
-      100) /
-      window.innerHeight >
+    ((equipe.offsetTop - window.pageYOffset) * 100) / window.innerHeight >
     60
   ) {
     equipe.classList.remove("active");
@@ -47,9 +49,7 @@ function scrollSection() {
 
   for (const pessoa of pessoas) {
     if (
-      ((pessoa.offsetTop - window.pageYOffset) *
-        100) /
-        window.innerHeight >
+      ((pessoa.offsetTop - window.pageYOffset) * 100) / window.innerHeight >
       80
     ) {
       pessoa.classList.remove("active");
@@ -71,41 +71,94 @@ function scrollSection() {
     } else {
       exame.classList.add("active");
     }
-    
   }
 }
 
-const preparos = document.querySelectorAll(".saberPreparo")
-const voltars = document.querySelectorAll(".voltar")
+const preparos = document.querySelectorAll(".saberPreparo");
+const voltars = document.querySelectorAll(".voltar");
 
-for(let preparo of preparos){
-  const exameFlip = preparo.parentNode.parentNode
-  preparo.addEventListener('click', function(){
-    exameFlip.classList.add("flip")
-  })
+for (let preparo of preparos) {
+  const exameFlip = preparo.parentNode.parentNode;
+  preparo.addEventListener("click", function () {
+    exameFlip.classList.add("flip");
+  });
 }
 
-for(let voltar of voltars){
-  const exameFlip = voltar.parentNode.parentNode
+for (let voltar of voltars) {
+  const exameFlip = voltar.parentNode.parentNode;
 
-  voltar.addEventListener('click', function(){
-    exameFlip.classList.remove("flip")
-    console.log(exameFlip)
-  })
+  voltar.addEventListener("click", function () {
+    exameFlip.classList.remove("flip");
+    console.log(exameFlip);
+  });
 }
 
 const exames = document.querySelectorAll(".exame");
+const tamanhoExame = exames[0].offsetWidth + 26;
+const scrollQuatro = document.querySelector(".quatro .scroll");
+const esquerda = document.querySelector(".esquerda");
+const direita = document.querySelector(".direita");
+
+
+esquerda.addEventListener("click", function () {
+  scrollQuatro.scrollBy({
+    left: -1 * tamanhoExame,
+    behavior: "smooth",
+  });
+
+  direita.classList.remove("none");
+
+  if (scrollQuatro.scrollLeft <= tamanhoExame) {
+    esquerda.classList.add("none");
+  }
+});
+
+direita.addEventListener("click", function () {
+  let pScroll = scrollQuatro.scrollLeft + scrollQuatro.offsetWidth;
+  let fimScroll = scrollQuatro.scrollWidth - tamanhoExame;
+
+  scrollQuatro.scrollBy({
+    left: tamanhoExame,
+    behavior: "smooth",
+  });
+
+  esquerda.classList.remove("none");
+
+  if (pScroll >= fimScroll) {
+    direita.classList.add("none");
+  }
+});
 
 for (const idx in exames) {
-  const scrollQuatro = document.querySelector(".quatro .scroll");
-  services[idx].onclick = function () {
-    exames.scrollTo({
+  let qUltimos = exames.length - (Math.round( scrollQuatro.offsetWidth / tamanhoExame) - 1)
+
+  exames[idx].onclick = function () {
+    scrollQuatro.scrollTo({
       top: 0,
-      left: idx * services[0].offsetWidth - 40,
+      left: idx * tamanhoExame - 144,
       behavior: "smooth",
     });
+
+    if (idx == 0) {
+      esquerda.classList.add("none");
+    } else {
+      esquerda.classList.remove("none");
+    }
+
+    if (idx >= qUltimos) {
+      direita.classList.add("none");
+    } else {
+      direita.classList.remove("none");
+    }
+
+    console.log(idx +"  "+qUltimos)
   };
+  
 }
+
+
+
+
 
 // const pickMes = document.querySelectorAll(
 //   ".textInformation div[class*='Text'] .text button"
