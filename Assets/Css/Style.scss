@@ -70,6 +70,25 @@ section.tres {
     }
   }
   .equipe {
+    .texto {
+      padding: 55px 21px;
+      h2 {
+        width: fit-content;
+        position: relative;
+        z-index: 1;
+        font-family: Noto Serif;
+        &::after {
+          content: " ";
+          width: 89px;
+          height: 55px;
+          position: absolute;
+          bottom: -21%;
+          right: -13%;
+          background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2369438' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+          opacity: 1;
+        }
+      }
+    }
     .imagem {
       width: 89%;
       display: flex;
@@ -191,6 +210,9 @@ section.tres.active {
         .nome {
           opacity: 1;
           transition: 0.3s ease 0.3;
+          h4 {
+            color: #fff;
+          }
         }
         .infoPessoas {
           @for $i from 1 to 3 {
@@ -199,6 +221,9 @@ section.tres.active {
               transition: 0.5s ease;
               transition-delay: #{($i * 0.2) + 0.3}s;
             }
+          }
+          p {
+            color: #fff;
           }
         }
       }
@@ -391,6 +416,26 @@ section.quatro.active {
 }
 
 section.cinco {
+  .texto {
+    padding: 55px 21px;
+    h2 {
+      width: fit-content;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+      font-family: Noto Serif;
+      &::after {
+        content: " ";
+        width: 89px;
+        height: 55px;
+        position: absolute;
+        bottom: -21%;
+        right: -13%;
+        background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2369438' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        opacity: 1;
+      }
+    }
+  }
   .logos {
     display: flex;
     flex-wrap: wrap;
@@ -418,14 +463,17 @@ section.cinco.active {
 
 section.seis {
   background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23694387' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  h4 {
+    text-align: center;
+    margin-bottom: 21px;
+  }
   .telefones {
-    margin-bottom: 34px;
     text-align: center;
     .telefone {
       margin: 13px 0;
       font-weight: 300;
       text-align: center;
-      font-size: 1.8em;
+      font-size: 1.5em;
     }
   }
   a {
@@ -438,6 +486,7 @@ section.seis {
       margin: auto;
       svg {
         width: 34px;
+        padding: 3px;
         margin-right: 13px;
         fill: #fff;
       }
@@ -471,6 +520,9 @@ section.sete {
         margin-bottom: 21px;
         font-weight: 200;
         opacity: 0;
+      }
+      button{
+        font-size: 1.1em;
       }
     }
   }
@@ -579,7 +631,7 @@ footer {
             height: 0;
             display: block;
             position: absolute;
-            overflow: hidden;      
+            overflow: hidden;
           }
           svg {
             width: 89px;
@@ -645,15 +697,22 @@ footer {
     .equipe {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       align-items: flex-end;
       order: 3;
+      .texto {
+        width: 100%;
+        order: 1;
+      }
       .imagem {
         width: 40%;
+        order: 2;
       }
       .pessoas {
         width: 60%;
         padding-left: 89px;
         margin: 0;
+        order: 3;
         .pessoa {
           .nome {
             h4 {
