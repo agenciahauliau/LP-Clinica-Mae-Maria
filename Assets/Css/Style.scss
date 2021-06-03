@@ -837,7 +837,7 @@ footer {
     nav {
       .container {
         .logo {
-          width: 21%;
+          width: 13%;
           img {
             width: 89px;
           }
@@ -846,6 +846,7 @@ footer {
           display: none;
         }
         .menus {
+          max-width: 987px;
           height: fit-content;
           flex-direction: row;
           justify-content: space-between;
@@ -865,7 +866,7 @@ footer {
               margin: 8px 0;
               text-align: center;
               font-weight: 300;
-              font-size: 0.8em;
+              font-size: 12px;
               opacity: 1;
               svg {
                 width: 21px;
@@ -890,6 +891,8 @@ footer {
     margin: 55px 0;
   }
   section.um {
+    padding-top: 89px;
+    min-height: 80vh;
     margin-top: 0;
     .container {
       display: flex;
@@ -964,6 +967,11 @@ footer {
         padding-left: 89px;
         margin: 0;
         .pessoa {
+          .nome {
+            h4 {
+              width: 100%;
+            }
+          }
           .infoPessoas {
             min-height: 55px;
             p {
@@ -987,6 +995,8 @@ footer {
       position: absolute;
       z-index: 2;
       svg {
+        width: 100%;
+        padding: 8px;
         transition: 0.15s ease-in;
       }
     }
