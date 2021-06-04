@@ -779,7 +779,7 @@ footer {
       width: 100%;
       position: relative;
       overflow-x: scroll;
-      scrollbar-height: none;
+      scrollbar-width: none;
       &::-webkit-scrollbar {
         height: 0;
       }
