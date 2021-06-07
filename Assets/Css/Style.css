@@ -1,3 +1,4 @@
+/** @format */
 section.dois h3 {
   margin: 0 13px 21px;
   font-family: Noto Serif;
@@ -779,10 +780,6 @@ footer .informacoes .contatos ul li {
   text-align: center;
 }
 
-footer .informacoes .contatos ul li .nameLink {
-  display: none;
-}
-
 footer .informacoes .contatos ul li svg {
   width: 21px;
   margin: 8px;
@@ -833,6 +830,10 @@ footer .linhaRodape .direitos {
 }
 
 footer .linhaRodape .direitos p {
+  text-align: center;
+}
+
+footer .linhaRodape .direitos p.feito {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -845,19 +846,11 @@ footer .linhaRodape .direitos p {
   text-align: center;
 }
 
-footer .linhaRodape .direitos p a .nameLink {
-  width: 0;
-  height: 0;
-  display: block;
-  position: absolute;
-  overflow: hidden;
-}
-
-footer .linhaRodape .direitos p a svg {
+footer .linhaRodape .direitos p.feito a svg {
   width: 89px;
 }
 
-footer .linhaRodape .direitos p span {
+footer .linhaRodape .direitos p.feito span {
   margin-left: 2px;
 }
 
@@ -1021,7 +1014,7 @@ footer .linhaRodape .direitos p span {
     width: 100%;
     position: relative;
     overflow-x: scroll;
-    scrollbar-height: none;
+    scrollbar-width: none;
   }
   section.quatro .scroll::-webkit-scrollbar {
     height: 0;

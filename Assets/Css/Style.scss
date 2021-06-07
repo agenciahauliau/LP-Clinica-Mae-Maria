@@ -1,3 +1,5 @@
+/** @format */
+
 section.dois {
   h3 {
     margin: 0 13px 21px;
@@ -521,7 +523,7 @@ section.sete {
         font-weight: 200;
         opacity: 0;
       }
-      button{
+      button {
         font-size: 1.1em;
       }
     }
@@ -579,9 +581,6 @@ footer {
           margin: 13px;
           font-size: 1em;
           text-align: center;
-          .nameLink {
-            display: none;
-          }
           svg {
             width: 21px;
             margin: 8px;
@@ -621,18 +620,14 @@ footer {
     .direitos {
       font-size: 12px;
       p {
+        text-align: center;
+      }
+      p.feito {
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         a {
-          .nameLink {
-            width: 0;
-            height: 0;
-            display: block;
-            position: absolute;
-            overflow: hidden;
-          }
           svg {
             width: 89px;
           }
