@@ -90,6 +90,9 @@ section.tres {
           opacity: 1;
         }
       }
+      p {
+        margin: 34px 0 0;
+      }
     }
     .imagem {
       width: 89%;
@@ -132,6 +135,9 @@ section.tres {
       flex-wrap: wrap;
       margin: 34px 0;
       .pessoa {
+        &.vazia {
+          display: none;
+        }
         width: 48%;
         padding: 8px 5px;
         margin: 1%;
@@ -143,12 +149,22 @@ section.tres {
           width: 100%;
           min-height: 34px;
           display: flex;
+          flex-direction: column;
           align-items: center;
           padding: 13px;
           opacity: 0;
           h4 {
+            min-height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            font-size: Noto Serif;
+            font-family: Noto Serif;
+          }
+          p {
+            font-size: 12px;
+            margin: 5px;
+            text-align: center;
           }
         }
         .infoPessoas {
@@ -235,64 +251,127 @@ section.tres.active {
 
 section.quatro {
   margin-bottom: -50px;
-  .esquerda,
-  .direita {
-    display: none;
-  }
-  .exames {
-    width: 100%;
-    height: 150vh;
-    overflow: hidden;
-    position: relative;
-    transition: 0.8s;
-    .exame {
-      padding: 21px;
-      margin: 13px;
-      background: #dfdbe5;
-      border-radius: 8px;
-      opacity: 0;
-      transition: 0.3s ease;
-      .nome {
-        margin-bottom: 21px;
-        opacity: 0;
-        transition: 0.3s ease;
-        h3 {
-          font-family: Noto Serif;
-        }
-      }
-      .info {
-        margin-bottom: 13px;
+  .topo {
+    margin: 34px 13px;
+    .texto {
+      padding: 0 21px 55px;
+      h2 {
+        width: fit-content;
         position: relative;
-        opacity: 0;
-        transition: 0.3s ease;
-        p {
-          position: relative;
-          opacity: 1;
-          z-index: 1;
-        }
-        .preparo {
+        z-index: 1;
+        font-family: Noto Serif;
+        &::after {
+          content: " ";
+          width: 89px;
+          height: 55px;
           position: absolute;
-          top: 0;
-          right: 0;
-          opacity: 0;
+          bottom: -21%;
+          right: -13%;
+          background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2369438' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+          opacity: 1;
         }
       }
-      .botoes {
-        display: flex;
-        flex-wrap: wrap;
-        opacity: 0;
-        transition: 0.3s ease;
-        button {
-          margin-right: 8px;
-          display: block;
-        }
-        .voltar {
-          display: none;
-          svg {
-            width: 13px;
-            margin-right: 8px;
-            fill: #fff;
+      p {
+        margin: 34px 0 13px;
+      }
+    }
+    .imagem {
+      width: 100%;
+      position: relative;
+      &::before {
+        content: " ";
+        width: 100%;
+        height: 110%;
+        position: absolute;
+        bottom: 0;
+        right: -13%;
+        z-index: -1;
+        background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E"),
+          #694387;
+        border-radius: 21px 0 0 21px;
+        -webkit-box-shadow: 0 13px 34px -21px #694387;
+        box-shadow: 0 13px 34px -21px #694387;
+      }
+      &::after {
+        content: " ";
+        width: 143px;
+        height: 89px;
+        position: absolute;
+        bottom: -21px;
+        left: -21px;
+        z-index: 6;
+        background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dfdbe5' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      }
+      img {
+        border-radius: 21px 0 21px 21px;
+      }
+    }
+  }
+  .scrollExames {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    .esquerda,
+    .direita {
+      display: none;
+    }
+    .scroll {
+      .exames {
+        width: 100%;
+        height: 150vh;
+        overflow: hidden;
+        position: relative;
+        transition: 0.8s;
+        .exame {
+          padding: 21px;
+          margin: 13px;
+          background: #dfdbe5;
+          border-radius: 8px;
+          opacity: 0;
+          transition: 0.3s ease;
+          .nome {
+            margin-bottom: 21px;
+            opacity: 0;
             transition: 0.3s ease;
+            h3 {
+              font-family: Noto Serif;
+            }
+          }
+          .info {
+            margin-bottom: 13px;
+            position: relative;
+            opacity: 0;
+            transition: 0.3s ease;
+            p {
+              position: relative;
+              opacity: 1;
+              z-index: 1;
+            }
+            .preparo {
+              position: absolute;
+              top: 0;
+              right: 0;
+              opacity: 0;
+            }
+          }
+          .botoes {
+            display: flex;
+            flex-wrap: wrap;
+            opacity: 0;
+            transition: 0.3s ease;
+            button {
+              margin-right: 8px;
+              display: block;
+            }
+            .voltar {
+              display: none;
+              svg {
+                width: 13px;
+                margin-right: 8px;
+                fill: #fff;
+                transition: 0.3s ease;
+              }
+            }
           }
         }
       }
@@ -674,12 +753,6 @@ footer {
     .selos {
       width: 50%;
       order: 2;
-      p {
-        width: 89%;
-        margin: 13px auto;
-        font-size: 12px;
-        text-align: center;
-      }
     }
     .texto {
       width: 50%;
@@ -698,6 +771,10 @@ footer {
       .texto {
         width: 100%;
         order: 1;
+        p {
+          width: 50%;
+          margin-bottom: -144px;
+        }
       }
       .imagem {
         width: 40%;
@@ -709,9 +786,16 @@ footer {
         margin: 0;
         order: 3;
         .pessoa {
+          &.vazia {
+            display: block;
+            background: transparent;
+          }
           .nome {
             h4 {
               width: 100%;
+            }
+            p {
+              font-size: 14px;
             }
           }
           .infoPessoas {
@@ -728,73 +812,90 @@ footer {
     .container {
       position: relative;
     }
-    .esquerda,
-    .direita {
-      width: 89px;
-      display: flex;
-      padding: 13px;
-      height: 100%;
-      position: absolute;
-      z-index: 2;
-      svg {
-        width: 100%;
-        padding: 8px;
-        transition: 0.15s ease-in;
-      }
-    }
-    .esquerda {
-      &.none {
-        opacity: 0;
-      }
-      top: 0;
-      left: 0;
-      background: linear-gradient(90deg, #fff 25%, transparent);
-      &:hover {
-        svg {
-          filter: drop-shadow(-5px 5px 5px #0005);
-          transition: 0.15s ease-out;
-        }
-      }
-    }
-    .direita {
-      &.none {
-        opacity: 0;
-      }
-      top: 0;
-      right: 0;
-      background: linear-gradient(90deg, transparent, #fff 75%);
-      &:hover {
-        svg {
-          filter: drop-shadow(5px 5px 5px #0005);
-          transition: 0.15s ease-out;
-        }
-      }
-    }
-    .scroll {
+    .topo {
       width: 100%;
-      position: relative;
-      overflow-x: scroll;
-      scrollbar-width: none;
-      &::-webkit-scrollbar {
-        height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 55px;
+      .imagem {
+        width: 50%;
       }
-      .exames {
-        width: fit-content;
-        height: 100%;
+    }
+    .scrollExames {
+      .esquerda,
+      .direita {
+        width: 89px;
         display: flex;
-        .exame {
-          width: 377px;
-          height: auto;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          .nome {
-            height: 89px;
-            display: flex;
-            align-items: center;
+        padding: 13px;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        svg {
+          width: 100%;
+          padding: 8px;
+          transition: 0.15s ease-in;
+        }
+      }
+      .esquerda {
+        &.none {
+          opacity: 0;
+        }
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #fff 25%, transparent);
+        &:hover {
+          svg {
+            filter: drop-shadow(-5px 5px 5px #0005);
+            transition: 0.15s ease-out;
           }
-          .botoes {
-            margin-top: 13px;
+        }
+      }
+      .direita {
+        &.none {
+          opacity: 0;
+        }
+        top: 0;
+        right: 0;
+        background: linear-gradient(90deg, transparent, #fff 75%);
+        &:hover {
+          svg {
+            filter: drop-shadow(5px 5px 5px #0005);
+            transition: 0.15s ease-out;
+          }
+        }
+      }
+      .scroll {
+        width: 100%;
+        position: relative;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          height: 0;
+        }
+        .exames {
+          width: fit-content;
+          height: 100%;
+          display: flex;
+          .exame {
+            width: 377px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .nome {
+              height: 89px;
+              display: flex;
+              align-items: center;
+            }
+            .info {
+              p {
+                font-size: 16px;
+              }
+            }
+            .botoes {
+              margin-top: 13px;
+            }
           }
         }
       }

@@ -114,6 +114,10 @@ section.tres .equipe .texto h2::after {
   opacity: 1;
 }
 
+section.tres .equipe .texto p {
+  margin: 34px 0 0;
+}
+
 section.tres .equipe .imagem {
   width: 89%;
   display: -webkit-box;
@@ -177,12 +181,20 @@ section.tres .equipe .pessoas .pessoa {
   opacity: 0;
 }
 
+section.tres .equipe .pessoas .pessoa.vazia {
+  display: none;
+}
+
 section.tres .equipe .pessoas .pessoa .nome {
   width: 100%;
   min-height: 34px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -191,8 +203,24 @@ section.tres .equipe .pessoas .pessoa .nome {
 }
 
 section.tres .equipe .pessoas .pessoa .nome h4 {
+  min-height: 43px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
-  font-size: Noto Serif;
+  font-family: Noto Serif;
+}
+
+section.tres .equipe .pessoas .pessoa .nome p {
+  font-size: 12px;
+  margin: 5px;
+  text-align: center;
 }
 
 section.tres .equipe .pessoas .pessoa .infoPessoas {
@@ -301,12 +329,86 @@ section.quatro {
   margin-bottom: -50px;
 }
 
-section.quatro .esquerda,
-section.quatro .direita {
+section.quatro .topo {
+  margin: 34px 13px;
+}
+
+section.quatro .topo .texto {
+  padding: 0 21px 55px;
+}
+
+section.quatro .topo .texto h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  font-family: Noto Serif;
+}
+
+section.quatro .topo .texto h2::after {
+  content: " ";
+  width: 89px;
+  height: 55px;
+  position: absolute;
+  bottom: -21%;
+  right: -13%;
+  background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2369438' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 1;
+}
+
+section.quatro .topo .texto p {
+  margin: 34px 0 13px;
+}
+
+section.quatro .topo .imagem {
+  width: 100%;
+  position: relative;
+}
+
+section.quatro .topo .imagem::before {
+  content: " ";
+  width: 100%;
+  height: 110%;
+  position: absolute;
+  bottom: 0;
+  right: -13%;
+  z-index: -1;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E"), #694387;
+  border-radius: 21px 0 0 21px;
+  -webkit-box-shadow: 0 13px 34px -21px #694387;
+  box-shadow: 0 13px 34px -21px #694387;
+}
+
+section.quatro .topo .imagem::after {
+  content: " ";
+  width: 143px;
+  height: 89px;
+  position: absolute;
+  bottom: -21px;
+  left: -21px;
+  z-index: 6;
+  background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dfdbe5' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+section.quatro .topo .imagem img {
+  border-radius: 21px 0 21px 21px;
+}
+
+section.quatro .scrollExames {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+section.quatro .scrollExames .esquerda,
+section.quatro .scrollExames .direita {
   display: none;
 }
 
-section.quatro .exames {
+section.quatro .scrollExames .scroll .exames {
   width: 100%;
   height: 150vh;
   overflow: hidden;
@@ -315,7 +417,7 @@ section.quatro .exames {
   transition: 0.8s;
 }
 
-section.quatro .exames .exame {
+section.quatro .scrollExames .scroll .exames .exame {
   padding: 21px;
   margin: 13px;
   background: #dfdbe5;
@@ -325,18 +427,18 @@ section.quatro .exames .exame {
   transition: 0.3s ease;
 }
 
-section.quatro .exames .exame .nome {
+section.quatro .scrollExames .scroll .exames .exame .nome {
   margin-bottom: 21px;
   opacity: 0;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
-section.quatro .exames .exame .nome h3 {
+section.quatro .scrollExames .scroll .exames .exame .nome h3 {
   font-family: Noto Serif;
 }
 
-section.quatro .exames .exame .info {
+section.quatro .scrollExames .scroll .exames .exame .info {
   margin-bottom: 13px;
   position: relative;
   opacity: 0;
@@ -344,20 +446,20 @@ section.quatro .exames .exame .info {
   transition: 0.3s ease;
 }
 
-section.quatro .exames .exame .info p {
+section.quatro .scrollExames .scroll .exames .exame .info p {
   position: relative;
   opacity: 1;
   z-index: 1;
 }
 
-section.quatro .exames .exame .info .preparo {
+section.quatro .scrollExames .scroll .exames .exame .info .preparo {
   position: absolute;
   top: 0;
   right: 0;
   opacity: 0;
 }
 
-section.quatro .exames .exame .botoes {
+section.quatro .scrollExames .scroll .exames .exame .botoes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -368,16 +470,16 @@ section.quatro .exames .exame .botoes {
   transition: 0.3s ease;
 }
 
-section.quatro .exames .exame .botoes button {
+section.quatro .scrollExames .scroll .exames .exame .botoes button {
   margin-right: 8px;
   display: block;
 }
 
-section.quatro .exames .exame .botoes .voltar {
+section.quatro .scrollExames .scroll .exames .exame .botoes .voltar {
   display: none;
 }
 
-section.quatro .exames .exame .botoes .voltar svg {
+section.quatro .scrollExames .scroll .exames .exame .botoes .voltar svg {
   width: 13px;
   margin-right: 8px;
   fill: #fff;
@@ -900,12 +1002,6 @@ footer .linhaRodape .direitos p.feito span {
         -ms-flex-order: 2;
             order: 2;
   }
-  section.tres .selos p {
-    width: 89%;
-    margin: 13px auto;
-    font-size: 12px;
-    text-align: center;
-  }
   section.tres .texto {
     width: 50%;
     padding: 34px;
@@ -936,6 +1032,10 @@ footer .linhaRodape .direitos p.feito span {
         -ms-flex-order: 1;
             order: 1;
   }
+  section.tres .equipe .texto p {
+    width: 50%;
+    margin-bottom: -144px;
+  }
   section.tres .equipe .imagem {
     width: 40%;
     -webkit-box-ordinal-group: 3;
@@ -950,8 +1050,15 @@ footer .linhaRodape .direitos p.feito span {
         -ms-flex-order: 3;
             order: 3;
   }
+  section.tres .equipe .pessoas .pessoa.vazia {
+    display: block;
+    background: transparent;
+  }
   section.tres .equipe .pessoas .pessoa .nome h4 {
     width: 100%;
+  }
+  section.tres .equipe .pessoas .pessoa .nome p {
+    font-size: 14px;
   }
   section.tres .equipe .pessoas .pessoa .infoPessoas {
     min-height: 55px;
@@ -962,8 +1069,24 @@ footer .linhaRodape .direitos p.feito span {
   section.quatro .container {
     position: relative;
   }
-  section.quatro .esquerda,
-  section.quatro .direita {
+  section.quatro .topo {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 0 55px;
+  }
+  section.quatro .topo .imagem {
+    width: 50%;
+  }
+  section.quatro .scrollExames .esquerda,
+  section.quatro .scrollExames .direita {
     width: 89px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -973,53 +1096,53 @@ footer .linhaRodape .direitos p.feito span {
     position: absolute;
     z-index: 2;
   }
-  section.quatro .esquerda svg,
-  section.quatro .direita svg {
+  section.quatro .scrollExames .esquerda svg,
+  section.quatro .scrollExames .direita svg {
     width: 100%;
     padding: 8px;
     -webkit-transition: 0.15s ease-in;
     transition: 0.15s ease-in;
   }
-  section.quatro .esquerda {
+  section.quatro .scrollExames .esquerda {
     top: 0;
     left: 0;
     background: -webkit-gradient(linear, left top, right top, color-stop(25%, #fff), to(transparent));
     background: linear-gradient(90deg, #fff 25%, transparent);
   }
-  section.quatro .esquerda.none {
+  section.quatro .scrollExames .esquerda.none {
     opacity: 0;
   }
-  section.quatro .esquerda:hover svg {
+  section.quatro .scrollExames .esquerda:hover svg {
     -webkit-filter: drop-shadow(-5px 5px 5px #0005);
             filter: drop-shadow(-5px 5px 5px #0005);
     -webkit-transition: 0.15s ease-out;
     transition: 0.15s ease-out;
   }
-  section.quatro .direita {
+  section.quatro .scrollExames .direita {
     top: 0;
     right: 0;
     background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(75%, #fff));
     background: linear-gradient(90deg, transparent, #fff 75%);
   }
-  section.quatro .direita.none {
+  section.quatro .scrollExames .direita.none {
     opacity: 0;
   }
-  section.quatro .direita:hover svg {
+  section.quatro .scrollExames .direita:hover svg {
     -webkit-filter: drop-shadow(5px 5px 5px #0005);
             filter: drop-shadow(5px 5px 5px #0005);
     -webkit-transition: 0.15s ease-out;
     transition: 0.15s ease-out;
   }
-  section.quatro .scroll {
+  section.quatro .scrollExames .scroll {
     width: 100%;
     position: relative;
     overflow-x: scroll;
     scrollbar-width: none;
   }
-  section.quatro .scroll::-webkit-scrollbar {
+  section.quatro .scrollExames .scroll::-webkit-scrollbar {
     height: 0;
   }
-  section.quatro .scroll .exames {
+  section.quatro .scrollExames .scroll .exames {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -1028,7 +1151,7 @@ footer .linhaRodape .direitos p.feito span {
     display: -ms-flexbox;
     display: flex;
   }
-  section.quatro .scroll .exames .exame {
+  section.quatro .scrollExames .scroll .exames .exame {
     width: 377px;
     height: auto;
     display: -webkit-box;
@@ -1042,7 +1165,7 @@ footer .linhaRodape .direitos p.feito span {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  section.quatro .scroll .exames .exame .nome {
+  section.quatro .scrollExames .scroll .exames .exame .nome {
     height: 89px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1051,7 +1174,10 @@ footer .linhaRodape .direitos p.feito span {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.quatro .scroll .exames .exame .botoes {
+  section.quatro .scrollExames .scroll .exames .exame .info p {
+    font-size: 16px;
+  }
+  section.quatro .scrollExames .scroll .exames .exame .botoes {
     margin-top: 13px;
   }
   section.quatro .verMais {
