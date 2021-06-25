@@ -964,6 +964,9 @@ footer .linhaRodape .direitos p.feito span {
 }
 
 @media screen and (min-width: 820px) {
+  section.dois {
+    padding: 13px 24px;
+  }
   section.dois .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1191,15 +1194,20 @@ footer .linhaRodape .direitos p.feito span {
     display: none;
   }
   section.cinco {
-    padding: 13px;
+    padding: 13px 24px;
     margin: 8px 0;
   }
   section.cinco .logos img {
     width: 89px;
     margin: 21px 34px;
   }
-  section.cinco {
+  section.seis {
+    padding: 13px 24px;
     margin: 8px 0;
+  }
+  section.sete {
+    margin: 8px 0;
+    padding: 13px 24px;
   }
   section.sete .resultado {
     display: -webkit-box;

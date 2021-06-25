@@ -676,7 +676,7 @@ footer {
           display: block;
           margin: 21px auto;
           img {
-            width: 89px;
+            width: 144px;
           }
         }
       }
@@ -722,6 +722,8 @@ footer {
 
 @media screen and (min-width: 820px) {
   section.dois {
+    margin: 8px 0
+    padding: 13px 24px;
     .container {
       display: flex;
       flex-direction: row-reverse;
@@ -904,7 +906,7 @@ footer {
     }
   }
   section.cinco {
-    padding: 13px;
+    padding: 13px 24px;
     margin: 8px 0;
     .logos {
       img {
@@ -913,10 +915,13 @@ footer {
       }
     }
   }
-  section.cinco {
+  section.seis {
+    padding: 13px 24px;
     margin: 8px 0;
   }
   section.sete {
+    margin: 8px 0;
+    padding: 13px 24px;
     .resultado {
       display: flex;
       .imagem {
