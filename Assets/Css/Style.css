@@ -1,4 +1,3 @@
-/** @format */
 section.dois h3 {
   margin: 0 13px 21px;
   font-family: Noto Serif;
@@ -168,6 +167,9 @@ section.tres .equipe .pessoas {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 34px 0;
 }
 
@@ -214,6 +216,7 @@ section.tres .equipe .pessoas .pessoa .nome h4 {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  font-weight: 300;
   font-family: Noto Serif;
 }
 
@@ -764,6 +767,10 @@ section.seis a button svg {
   fill: #fff;
 }
 
+section.sete {
+  background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23694387' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
 section.sete .resultado {
   position: relative;
 }
@@ -1027,38 +1034,34 @@ footer .linhaRodape .direitos p.feito span {
             order: 3;
   }
   section.tres .equipe .texto {
-    width: 100%;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-  section.tres .equipe .texto p {
-    width: 50%;
-    margin-bottom: -144px;
-  }
-  section.tres .equipe .imagem {
-    width: 40%;
+    width: 60%;
+    padding: 55px;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
+  section.tres .equipe .imagem {
+    width: 40%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
   section.tres .equipe .pessoas {
-    width: 60%;
     padding-left: 89px;
-    margin: 0;
+    margin-top: 55px;
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
   }
-  section.tres .equipe .pessoas .pessoa.vazia {
-    display: block;
-    background: transparent;
+  section.tres .equipe .pessoas .pessoa {
+    width: 24%;
+    margin: 0.5%;
   }
   section.tres .equipe .pessoas .pessoa .nome h4 {
     width: 100%;
   }
   section.tres .equipe .pessoas .pessoa .nome p {
-    font-size: 14px;
+    font-size: 12px;
   }
   section.tres .equipe .pessoas .pessoa .infoPessoas {
     min-height: 55px;
@@ -1187,9 +1190,16 @@ footer .linhaRodape .direitos p.feito span {
   section.quatro .verMais {
     display: none;
   }
+  section.cinco {
+    padding: 13px;
+    margin: 8px 0;
+  }
   section.cinco .logos img {
     width: 89px;
     margin: 21px 34px;
+  }
+  section.cinco {
+    margin: 8px 0;
   }
   section.sete .resultado {
     display: -webkit-box;
