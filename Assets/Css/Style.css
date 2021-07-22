@@ -505,8 +505,8 @@ section.quatro .verMais {
   margin-top: -100px;
   position: relative;
   z-index: 1;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(55%, #fff), to(transparent));
-  background: linear-gradient(0deg, #fff 55%, transparent);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(55%, #fff), to(#fff0));
+  background: linear-gradient(0deg, #fff 55%, #fff0);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
@@ -907,7 +907,7 @@ footer .informacoes .logoFooter .logo a {
 }
 
 footer .informacoes .logoFooter .logo a img {
-  width: 89px;
+  width: 144px;
 }
 
 footer .informacoes .siteMap {
@@ -965,6 +965,7 @@ footer .linhaRodape .direitos p.feito span {
 
 @media screen and (min-width: 820px) {
   section.dois {
+    margin: 8px 0;
     padding: 13px 24px;
   }
   section.dois .container {
@@ -1116,8 +1117,8 @@ footer .linhaRodape .direitos p.feito span {
   section.quatro .scrollExames .esquerda {
     top: 0;
     left: 0;
-    background: -webkit-gradient(linear, left top, right top, color-stop(25%, #fff), to(transparent));
-    background: linear-gradient(90deg, #fff 25%, transparent);
+    background: -webkit-gradient(linear, left top, right top, color-stop(25%, #fff), to(#fff0));
+    background: linear-gradient(90deg, #fff 25%, #fff0);
   }
   section.quatro .scrollExames .esquerda.none {
     opacity: 0;
@@ -1131,8 +1132,8 @@ footer .linhaRodape .direitos p.feito span {
   section.quatro .scrollExames .direita {
     top: 0;
     right: 0;
-    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(75%, #fff));
-    background: linear-gradient(90deg, transparent, #fff 75%);
+    background: -webkit-gradient(linear, left top, right top, from(#fff0), color-stop(75%, #fff));
+    background: linear-gradient(90deg, #fff0, #fff 75%);
   }
   section.quatro .scrollExames .direita.none {
     opacity: 0;

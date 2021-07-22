@@ -58,7 +58,7 @@ function scrollSection() {
     }
   }
 
-  const exames = document.querySelectorAll(".exame");
+  let exames = document.querySelectorAll(".exame");
 
   for (const exame of exames) {
     if (
