@@ -386,7 +386,7 @@ section.quatro {
     margin-top: -100px;
     position: relative;
     z-index: 1;
-    background: linear-gradient(0deg, #fff 55%, transparent);
+    background: linear-gradient(0deg, #fff 55%, #fff0);
     transition: 0.3s ease;
     button {
       background: none;
@@ -844,7 +844,7 @@ footer {
         }
         top: 0;
         left: 0;
-        background: linear-gradient(90deg, #fff 25%, transparent);
+        background: linear-gradient(90deg, #fff 25%, #fff0);
         &:hover {
           svg {
             filter: drop-shadow(-5px 5px 5px #0005);
@@ -858,7 +858,7 @@ footer {
         }
         top: 0;
         right: 0;
-        background: linear-gradient(90deg, transparent, #fff 75%);
+        background: linear-gradient(90deg, #fff0, #fff 75%);
         &:hover {
           svg {
             filter: drop-shadow(5px 5px 5px #0005);

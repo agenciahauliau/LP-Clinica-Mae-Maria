@@ -1,4 +1,4 @@
-"use restrict";
+"use strict";
 
 const verMaisExames = document.querySelector(".verMais .ver");
 
@@ -89,7 +89,6 @@ for (let voltar of voltars) {
 
   voltar.addEventListener("click", function () {
     exameFlip.classList.remove("flip");
-    console.log(exameFlip);
   });
 }
 
@@ -150,8 +149,6 @@ for (const idx in exames) {
     } else {
       direita.classList.remove("none");
     }
-
-    console.log(idx +"  "+qUltimos)
   };
   
 }
