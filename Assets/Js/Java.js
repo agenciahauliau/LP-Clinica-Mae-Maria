@@ -128,30 +128,55 @@ direita.addEventListener("click", function () {
   }
 });
 
-for (const idx in exames) {
+exames.forEach((exame, index) => {
   let qUltimos = exames.length - (Math.round( scrollQuatro.offsetWidth / tamanhoExame) - 1)
 
-  exames[idx].onclick = function () {
+  exame.onclick = function () {
     scrollQuatro.scrollTo({
       top: 0,
-      left: idx * tamanhoExame - 144,
+      left: index * tamanhoExame - 144,
       behavior: "smooth",
     });
 
-    if (idx == 0) {
+    if (index == 0) {
       esquerda.classList.add("none");
     } else {
       esquerda.classList.remove("none");
     }
 
-    if (idx >= qUltimos) {
+    if (index >= qUltimos) {
       direita.classList.add("none");
     } else {
       direita.classList.remove("none");
     }
-  };
-  
-}
+  }
+});
+
+
+// for (let exame of exames) {
+//   let qUltimos = exames.length - (Math.round( scrollQuatro.offsetWidth / tamanhoExame) - 1)
+
+//   exame.onclick = function () {
+
+//     scrollQuatro.scrollTo({
+//       top: 0,
+//       left: idx * tamanhoExame - 144,
+//       behavior: "smooth",
+//     });
+
+//     if (idx == 0) {
+//       esquerda.classList.add("none");
+//     } else {
+//       esquerda.classList.remove("none");
+//     }
+
+//     if (idx >= qUltimos) {
+//       direita.classList.add("none");
+//     } else {
+//       direita.classList.remove("none");
+//     }
+//   };
+// }
 
 const ano = new Date().getFullYear();
 document.querySelector('.anoRodape').innerHTML = ano;
